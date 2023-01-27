@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Mail\SendCodeToThePlayer;
 use Illuminate\Support\Facades\Mail;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class SendCodeMailToThePlayer
 {
@@ -14,6 +15,7 @@ class SendCodeMailToThePlayer
             'code' => $player->code,
             'result_url' => route('share-url', $player->slug),
             'username' => $player->username,
+            'qrCode' => QrCode::size(200)->generate($player->code)
         ]));
     }
 }

@@ -30,18 +30,7 @@ class GamePlayerController extends Controller
      */
     public function show(GamePlayer $player)
     {
-        $shareComponent = \Share::page(
-            route('share-url', $player->slug),
-            'Your share text comes here',
-        )
-            ->facebook()
-            ->twitter()
-            ->linkedin()
-            ->telegram()
-            ->whatsapp()
-            ->reddit();
-
-        return view('game-player.results', ['player' => $player, 'shareComponent' => $shareComponent]);
+        return view('game-player.results', ['player' => $player, 'shareComponent' => ShareService::share($player)]);
     }
 
 

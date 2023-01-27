@@ -14,7 +14,7 @@
     <p>Your result is {{ $details['result'] }}</p>
     <p>Link to view your <a href="{{ $details['result_url'] }}">Result</a></p>
     <div>
-        {!! QrCode::size(200)->generate($details['code']) !!}
+        {!! $details['qrCode']  !!}
     </div>
 </body>
 

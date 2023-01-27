@@ -24,7 +24,7 @@
             border: 1px solid rgb(9, 197, 75);
             border-radius: 10px;
             margin: 1px;
-            font-size: 30px;
+            font-size: 20px;
             color: #222;
             background-color: rgb(9, 197, 75);
         }
@@ -40,8 +40,6 @@
     <div class="container mt-4">
         {!! $shareComponent !!}
     </div>
-
-
 </body>
 
 </html>

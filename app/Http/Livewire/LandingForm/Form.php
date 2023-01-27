@@ -19,6 +19,11 @@ class Form extends Component
 
     public $topTenPlayers;
 
+    protected $rules = [
+        'email' => 'required|email',
+        'username' => 'required|unique:game_players',
+    ];
+
     public function render()
     {
         $this->topTenPlayers =  GamePlayer::orderBy('result', 'asc')->where('status', '=', true)->take(10)->get();
@@ -58,10 +63,7 @@ class Form extends Component
         return redirect()->route('start-game', ['player' => $this->player->slug]);
     }
 
-    protected $rules = [
-        'email' => 'required|email',
-        'username' => 'required',
-    ];
+
 
     public function updated($propertyName)
     {
