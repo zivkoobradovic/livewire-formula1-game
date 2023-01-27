@@ -12,8 +12,8 @@ class Listing extends Component
 
 
     public function mount() {
-        $this->topPlayers =  GamePlayer::orderBy('result', 'asc')->take(10)->get();
-        $this->latest50Players = GamePlayer::latest()->take(50)->get();
+        $this->topPlayers =  GamePlayer::orderBy('result', 'asc')->where('status', '=', true)->take(10)->get();
+        $this->latest50Players = GamePlayer::latest()->where('status', '=', true)->take(50)->get();
     }
 
     public function render()

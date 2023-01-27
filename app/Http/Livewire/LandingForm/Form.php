@@ -21,7 +21,7 @@ class Form extends Component
 
     public function render()
     {
-        $this->topTenPlayers =  GamePlayer::orderBy('result', 'asc')->take(10)->get();
+        $this->topTenPlayers =  GamePlayer::orderBy('result', 'asc')->where('status', '=', true)->take(10)->get();
         $this->player = GamePlayer::where('email', $this->email)->get()->first();
 
         if ($this->player) {

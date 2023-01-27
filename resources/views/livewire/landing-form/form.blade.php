@@ -1,6 +1,6 @@
-<div class="container m-auto relative flex items-top justify-center min-h-screen bg-gray-900 sm:items-center sm:pt-0">
+<div class="container m-auto relative lg:flex items-top justify-center min-h-screen bg-gray-900 sm:items-center sm:pt-0">
 
-    <section class="bg-white dark:bg-green-500 rounded-2xl w-1/2 m-5">
+    <section class="bg-white dark:bg-blue-500 rounded-2xl lg:w-1/2 lg:m-5 mb-3">
         <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
             <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">Please
                 Enter Your Email to begin the Game
@@ -13,7 +13,7 @@
                     <label for="email" class="block mb-2 text-sm font-medium text-white">Your
                         email</label>
                     <input wire:model="email" wire:click="$refresh"
-                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-green-200 dark:border-green-700 dark:placeholder-gray-400 dark:text-gray-800 dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-blue-200 dark:border-green-700 dark:placeholder-gray-400 dark:text-gray-800 dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
                         placeholder="youremail@please.com" required>
                     @error('email') <span class="error">{{ $message }}</span> @enderror
                 </div>
@@ -21,7 +21,7 @@
                 <div>
                     <label for="username" class="block mb-2 text-sm font-medium text-white">Username</label>
                     <input wire:model="username" {{ $playerExists ? 'disabled' : '' }}
-                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-green-200 dark:border-green-700 dark:placeholder-gray-400 dark:text-gray-800 dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-blue-200 dark:border-green-700 dark:placeholder-gray-400 dark:text-gray-800 dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
                         placeholder="Username">
                     @error('username') <span class="error">{{ $message }}</span> @enderror
                 </div>
@@ -31,7 +31,7 @@
                     <label for="phone" class="block mb-2 text-sm font-medium text-white">Your
                         Phone (optional)</label>
                     <input type="phone" id="phone" name="phone" wire:model="phone" {{ $playerExists ? 'disabled' : '' }}
-                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-green-200 dark:border-green-700 dark:placeholder-gray-400 dark:text-gray-800 dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-blue-200 dark:border-green-700 dark:placeholder-gray-400 dark:text-gray-800 dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
                         placeholder="phone number (optional)">
 
                 </div>
@@ -62,22 +62,33 @@
 
                 </ul>
                 <button wire:click="{{ $playerExists ? 'playAgain' : 'startNewGame' }}"
-                    class="text-white py-3 px-5 text-lg font-medium text-center rounded-lg bg-green-500 sm:w-fit hover:bg-green-300 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">{{
+                    class="text-white py-3 px-5 text-lg font-medium text-center rounded-lg bg-blue-500 sm:w-fit hover:bg-blue-300 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">{{
                     $playerExists ? 'Play Again' : 'Start Game' }}</button>
             </form>
         </div>
     </section>
 
-    <section class="bg-blue-400 rounded-2xl w-1/2 m-5">
+    <section class="bg-blue-500 rounded-2xl lg:w-1/2 lg:m-5">
     @foreach ($topTenPlayers as $player)
-        <div class="flex py-8 lg:py-8 px-4 mx-auto max-w-screen-md rounded-t-2xl {{$loop->iteration === 1 ? 'bg-blue-200' : ''}}">
-            <div class="w-1/2">
+        <div class="flex py-8 lg:py-8 px-4 mx-auto max-w-screen-md
+         {{$loop->iteration === 1 ? 'bg-blue-100 text-lg rounded-t-2xl' : ''}}
+         {{$loop->iteration === 2 ? 'bg-blue-200' : ''}}
+         {{$loop->iteration === 3 ? 'bg-blue-300' : ''}}
+         {{$loop->iteration === 4 ? 'bg-blue-400' : ''}}
+         {{$loop->iteration === 5 ? 'bg-blue-500' : ''}}
+         {{$loop->iteration === 6 ? 'bg-blue-600' : ''}}
+         {{$loop->iteration === 7 ? 'bg-blue-700' : ''}}
+         {{$loop->iteration === 8 ? 'bg-indigo-700' : ''}}
+         {{$loop->iteration === 9 ? 'bg-indigo-800' : ''}}
+         {{$loop->iteration === 10 ? 'bg-indigo-900 rounded-b-2xl' : ''}}
+         ">
+            <div class="w-1/5">
                 {{$loop->iteration}}
             </div>
-            <div class="w-1/2">
+            <div class="w-1/3 mr-auto">
                 {{$player->username}}
             </div>
-            <div class="w-1/2">
+            <div class="w-1/3 ml-auto text-center">
                 {{$player->result}}
             </div>
         </div>
