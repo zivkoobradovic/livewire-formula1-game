@@ -1,4 +1,5 @@
-<div class="container m-auto relative lg:flex items-top justify-center min-h-screen bg-gray-900 sm:items-center sm:pt-0">
+<div
+    class="container m-auto relative lg:flex items-top justify-center min-h-screen bg-gray-900 sm:items-center sm:pt-0">
     <section class="bg-white dark:bg-blue-500 rounded-2xl lg:w-1/2 lg:m-5 mb-3">
         <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
             <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">Please
@@ -11,12 +12,28 @@
                 <div>
                     <label for="email" class="block mb-2 text-sm font-medium text-white">Your
                         email</label>
-                    <input wire:model="email" wire:click="$refresh"
+                    <input wire:model="email" wire:click="$refresh('email')"
                         class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-blue-200 dark:border-green-700 dark:placeholder-gray-400 dark:text-gray-800 dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
                         placeholder="youremail@please.com" required>
                     @error('email') <span class="error">{{ $message }}</span> @enderror
                 </div>
 
+                @if ($checkingCode)
+                <div>
+                    <label for="code" class="block mb-2 text-sm font-medium text-white">Enter Your Code</label>
+                    <input wire:model="code"
+                        class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-blue-200 dark:border-green-700 dark:placeholder-gray-400 dark:text-gray-800 dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                        placeholder="Code">
+                    @error('code') <span class="error">{{ $message }}</span> @enderror
+                    {{$code}}
+                    {{$correctCode ? 'lalalala' : 'nononono'}}
+                </div>
+                @endif
+
+
+
+
+                @if (!$checkingCode)
                 <div>
                     <label for="username" class="block mb-2 text-sm font-medium text-white">Username</label>
                     <input wire:model="username" {{ $playerExists ? 'disabled' : '' }}
@@ -24,15 +41,13 @@
                         placeholder="Username">
                     @error('username') <span class="error">{{ $message }}</span> @enderror
                 </div>
-
-
                 <div>
                     <label for="phone" class="block mb-2 text-sm font-medium text-white">Your
                         Phone (optional)</label>
                     <input type="phone" id="phone" name="phone" wire:model="phone" {{ $playerExists ? 'disabled' : '' }}
                         class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-blue-200 dark:border-green-700 dark:placeholder-gray-400 dark:text-gray-800 dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
                         placeholder="phone number (optional)">
-
+                    @error('phone') <span class="error">{{ $message }}</span> @enderror
                 </div>
 
                 <h3 class="mb-5 text-lg font-medium text-gray-900 dark:text-white">Choose Your Avatar</h3>
@@ -58,17 +73,17 @@
                             </div>
                         </label>
                     </li>
-
                 </ul>
+                @endif
                 <button wire:click="{{ $playerExists ? 'playAgain' : 'startNewGame' }}"
-                    class="text-white py-3 px-5 text-lg font-medium text-center rounded-lg bg-blue-500 sm:w-fit hover:bg-blue-300 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">{{
+                    class="text-white py-3 px-5 text-lg font-medium text-center rounded-lg sm:w-fit focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 {{ $correctCode ? 'bg-green-500 hover:bg-green-300' : 'bg-blue-500  hover:bg-blue-300' }}">{{
                     $playerExists ? 'Play Again' : 'Start Game' }}</button>
             </form>
         </div>
     </section>
 
     <section class="bg-blue-500 rounded-2xl lg:w-1/2 lg:m-5">
-    @foreach ($topTenPlayers as $player)
+        @foreach ($topTenPlayers as $player)
         <div class="flex py-8 lg:py-8 px-4 mx-auto max-w-screen-md
          {{$loop->iteration === 1 ? 'bg-blue-100 text-lg rounded-t-2xl' : ''}}
          {{$loop->iteration === 2 ? 'bg-blue-200' : ''}}
@@ -91,6 +106,6 @@
                 {{$player->result}}
             </div>
         </div>
-    @endforeach
+        @endforeach
     </section>
 </div>
