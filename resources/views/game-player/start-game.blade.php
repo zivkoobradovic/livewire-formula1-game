@@ -31,7 +31,7 @@
                 </div>
                 <div class="col-md-4 col-xs-4">
                     <div class="game-logo text-anime">
-                        <img src="https://logodownload.org/wp-content/uploads/2016/11/formula-1-logo-5-3.png" alt="">
+                        <img src="{{asset('game/img/logo.svg')}}" alt="">
                     </div>
                 </div>
                 <div class="col-md-4 col-xs-4">
@@ -43,6 +43,17 @@
             </div>
         </div>
 
+    </div>
+    <div class="game-footer">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="game-footer-logo">
+                      <img src="{{asset('game/img/footer_logo.png')}}">
+                  </div>
+              </div>
+          </div>
+      </div>
     </div>
     <div class="game-view" id="game-1">
         <div class="game-holder">

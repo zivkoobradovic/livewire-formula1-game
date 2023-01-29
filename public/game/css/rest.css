@@ -6,7 +6,7 @@ body, html {
 }
 body {
   font-family: 'Racing Sans One', cursive;
-  background-image: url(../img/bg_features.jpg);
+  background-image: url(../img/bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -18,22 +18,37 @@ body {
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background-color: #fff;
+  background-color: #bfbfbff0;
   z-index: 9999;
-  background-image: url(../img/loader.gif);
+  background-image: url(../img/logo.svg);
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: 120px;
+  background-size: 140px;
+  -webkit-backdrop-filter: saturate(180%) blur(26px);
+  backdrop-filter: saturate(180%) blur(26px);
+  background-color: hsl(253deg 36% 41%);
+  background-color: rgb(35 7 116 / 72%);
+  animation: opulse 0.6s infinite ease-in-out alternate;
+
 }
 .pulse {
   animation: pulse 1s infinite ease-in-out alternate;
 }
 @keyframes pulse {
-  from { transform: scale(0.9); }
+  from { transform: scale(0.95); }
   to { transform: scale(1); }
 }
 .bounce2 {
   animation: bounce2 2s ease infinite;
+}
+
+.opulse {
+  animation: pulse 1s infinite ease-in-out alternate;
+}
+
+@keyframes opulse {
+  from { background-size: 140px; }
+  to { background-size: 160px; }
 }
 @keyframes bounce2 {
 	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
@@ -68,7 +83,7 @@ body {
 }
 .game-bar h5 {
   font-size: 32px;
-  text-shadow: 3px 3px 2px rgba(128, 0, 0, 1);
+  text-shadow: 3px 3px 2px rgb(4 44 17);
 }
 .game-time {
   text-align: right;
@@ -83,12 +98,25 @@ body {
   display: table-cell;
   vertical-align: middle;
 }
+.game-footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  left: 0px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+.game-footer-logo img {
+  width: 100%;
+  max-width: 400px;
+
+}
 h1 {
   color: #fff;
   text-align: center;
   font-size: 65px;
   margin-bottom: 40px;
-  text-shadow: 3px 3px 2px rgba(128, 0, 0, 1);
+  text-shadow: 3px 3px 2px rgb(4 44 17);
 }
 .game-view {
   display: none;
@@ -106,6 +134,10 @@ h1 {
   text-align: center;
   vertical-align: middle;
   animation: bounce2 2s ease infinite;
+  -webkit-backdrop-filter: saturate(180%) blur(26px);
+  backdrop-filter: saturate(180%) blur(26px);
+  background-color: hsl(253deg 36% 41%);
+  background-color: rgb(35 7 116 / 72%);
 }
 .track-slot small, .flag-slot small {
   color: #eee;
@@ -284,6 +316,9 @@ h1 {
   h1 {
     font-size: 25px;
     margin-bottom: 10px;
+  }
+  .game-bar {
+    padding-top: 0px;
   }
   .game-bar h5 {
     font-size: 16px;
