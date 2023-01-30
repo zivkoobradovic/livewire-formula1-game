@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 body, html {
   width: 100%;
   height: 100vh;
@@ -134,10 +135,19 @@ body {
   border-radius: 10px;
   color: #fff;
 }
-
+.tab-content .btn-primary {
+      background-color: transparent;
+      border-color: #00dd7e;
+      border-width: 2px;
+      border-radius: 10px;
+}
 label {
-
     color: #01DC7D;
+    margin-top: 15px;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2px;
 }
 .form-control {
   /* UI Properties */
@@ -146,6 +156,48 @@ border-radius: 10px;
 background-color: transparent;
 line-height: 50px;
 height: 50px;
+color: #e0e0e0;
+font-family: 'Roboto', sans-serif;
+
+
+}
+.form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+color: #e0e0e0;
+  opacity: 1; /* Firefox */
+}
+
+.form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #fff;
+}
+
+.form-control::-ms-input-placeholder { /* Microsoft Edge */
+  color: #fff;
+}
+.avatar-select {
+  list-style: none;
+  padding: 0px;
+  width: 100%;
+  margin-bottom: 10px;
+  float: left;
+}
+.avatar-select li {
+  float: left;
+  width: 48%;
+  text-align: center;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #fff;
+  margin: 1%;
+  cursor: pointer;
+}
+.avatar-select li.boy label {
+    color: #4f80f8;
+    margin-top: 12px;
+}
+.avatar-select li.girl label {
+    color: #df4597;
+    margin-top: 12px;
+
 }
 h1 {
   color: #fff;
@@ -356,11 +408,25 @@ h1 {
   .game-bar {
     padding-top: 0px;
   }
+  .game-logo img {
+    max-width: 130px;
+  }
   .game-bar h5 {
     font-size: 16px;
   }
   .game-footer-logo img {
     max-width: 150px;
+  }
+
+  .nav-justified>li {
+    float: left;
+    width: 49%;
+}
+.nav-justified>li>a {
+    font-size: 16px;
+}
+.tab-content {
+    padding: 20px
   }
   .track-slot, .flag-slot {
     height: 230px;

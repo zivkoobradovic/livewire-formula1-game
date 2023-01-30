@@ -29,18 +29,15 @@
 
       <!-- Nav tabs -->
       <ul class="nav nav-pills nav-justified" role="tablist">
-        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Login</a></li>
-        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Leaderboard</a></li>
+        <li role="presentation" class="active"><a href="#login" aria-controls="login" role="tab" data-toggle="tab">Login</a></li>
+        <li role="presentation"><a href="#results" aria-controls="results" role="tab" data-toggle="tab">Leaderboard</a></li>
       </ul>
 
       <!-- Tab panes -->
       <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="home">
+        <div role="tabpanel" class="tab-pane active" id="login">
           <section class="bg-white dark:bg-blue-500 rounded-2xl lg:w-1/2 lg:m-5 mb-3">
               <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-                  <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">Please
-                      Enter Your Email to begin the Game
-                  </h2>
                   <!-- <p class="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">Got a technical
                               issue? Want to send feedback about a beta feature? Need details about our Business plan? Let us know.</p> -->
                   <form class="space-y-8" wire:submit.prevent="">
@@ -63,8 +60,7 @@
                           <label for="email" class="block mb-2 text-sm font-medium text-white">Your
                               email</label>
                           <input wire:model="email" wire:click="$refresh('email')"
-                              class="form-control"
-                              placeholder="youremail@please.com" required>
+                              class="form-control" required>
                           @error('email') <span class="error">{{ $message }}</span> @enderror
                       </div>
 
@@ -72,8 +68,7 @@
                       <div>
                           <label for="code" class="block mb-2 text-sm font-medium text-white">Enter Your Code</label>
                           <input wire:model="code"
-                              class="form-control"
-                              placeholder="Code">
+                              class="form-control">
                           @error('code') <span class="error">{{ $message }}</span> @enderror
                           {{$codeMessage ? $codeMessage : ''}}
                       </div>
@@ -86,23 +81,21 @@
                       <div>
                           <label for="username" class="block mb-2 text-sm font-medium text-white">Username</label>
                           <input wire:model="username" {{ $playerExists ? 'disabled' : '' }}
-                              class="form-control"
-                              placeholder="Username">
+                              class="form-control">
                           @error('username') <span class="error">{{ $message }}</span> @enderror
                       </div>
                       <div>
                           <label for="phone" class="block mb-2 text-sm font-medium text-white">Your
                               Phone (optional)</label>
                           <input type="phone" id="phone" name="phone" wire:model="phone" {{ $playerExists ? 'disabled' : '' }}
-                              class="form-control"
-                              placeholder="phone number (optional)">
+                              class="form-control">
                           @error('phone') <span class="error">{{ $message }}</span> @enderror
                       </div>
 
-                      <h3 class="mb-5 text-lg font-medium text-gray-900 dark:text-white">Choose Your Avatar</h3>
-                      <ul class="grid w-full gap-6 md:grid-cols-2">
-                          <li>
-                              <input type="radio" id="male" name="avatar" value="male" class="hidden peer" wire:model="avatar"
+                      <label class="mb-5 text-lg font-medium text-gray-900 dark:text-white">Choose Your Avatar</label>
+                      <ul class="grid w-full gap-6 md:grid-cols-2 avatar-select">
+                          <li class="boy">
+                              <input type="radio" id="male" name="avatar" value="male" class="peer" wire:model="avatar"
                                   {{ $playerExists ? 'disabled' : '' }} required>
                               <label for="male"
                                   class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 peer-checked:bg-blue-800 dark:hover:bg-blue-400">
@@ -112,8 +105,8 @@
                               </label>
 
                           </li>
-                          <li>
-                              <input type="radio" id="female" name="avatar" value="female" class="hidden peer" {{
+                          <li class="girl">
+                              <input type="radio" id="female" name="avatar" value="female" class="peer" {{
                                   $playerExists ? 'disabled' : '' }} wire:model="avatar">
                               <label for="female"
                                   class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-pink-300 peer-checked:border-pink-300 peer-checked:text-pink-300 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 peer-checked:bg-pink-800 dark:hover:bg-pink-400">
@@ -126,7 +119,7 @@
                       @endif
                       <button wire:click="{{ $playerExists ? 'playAgain' : 'startNewGame' }}" {{$playerExists && !$correctCode
                           ? 'hidden disabled' : '' }}
-                          class="text-white py-3 px-5 text-lg font-medium text-center rounded-lg sm:w-fit focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 {{ $playerExists && $correctCode ? 'bg-green-500 hover:bg-green-300' : 'bg-blue-500  hover:bg-blue-300' }}">{{
+                          class="btn btn-lg btn-primary btn-block {{ $playerExists && $correctCode ? 'bg-green-500 hover:bg-green-300' : 'bg-blue-500  hover:bg-blue-300' }}">{{
                           $playerExists ? 'Play Again' : 'Start Game' }}</button>
                   </form>
               </div>
@@ -134,29 +127,18 @@
 
 
         </div>
-        <div role="tabpanel" class="tab-pane" id="profile">
+        <div role="tabpanel" class="tab-pane" id="results">
 
-          <section class="bg-blue-500 rounded-2xl lg:w-1/2 lg:m-5">
+          <section class="col-md-12">
               @foreach ($topTenPlayers as $player)
-              <div class="flex py-8 lg:py-8 px-4 mx-auto max-w-screen-md
-               {{$loop->iteration === 1 ? 'bg-blue-100 text-lg rounded-t-2xl' : ''}}
-               {{$loop->iteration === 2 ? 'bg-blue-200' : ''}}
-               {{$loop->iteration === 3 ? 'bg-blue-300' : ''}}
-               {{$loop->iteration === 4 ? 'bg-blue-400' : ''}}
-               {{$loop->iteration === 5 ? 'bg-blue-500' : ''}}
-               {{$loop->iteration === 6 ? 'bg-blue-600' : ''}}
-               {{$loop->iteration === 7 ? 'bg-blue-700' : ''}}
-               {{$loop->iteration === 8 ? 'bg-indigo-700' : ''}}
-               {{$loop->iteration === 9 ? 'bg-indigo-800' : ''}}
-               {{$loop->iteration === 10 ? 'bg-indigo-900 rounded-b-2xl' : ''}}
-               ">
-                  <div class="w-1/5">
+              <div class="row">
+                  <div class="col-md-2 col-xs-2">
                       {{$loop->iteration}}
                   </div>
-                  <div class="w-1/3 mr-auto">
+                  <div class="col-md-5 col-xs-5">
                       {{$player->username}}
                   </div>
-                  <div class="w-1/3 ml-auto text-center">
+                  <div class="col-md-5 col-xs-5">
                       {{$player->result}}
                   </div>
               </div>
