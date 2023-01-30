@@ -431,6 +431,10 @@ h1 {
   color: #fff;
   padding-bottom: 50px;
 }
+
+.score-content p {
+    font-size: 70px;
+}
 @media (max-width: 600px) {
   h1 {
     font-size: 25px;
