@@ -8,11 +8,17 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
     @livewireStyles
-    <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <!-- Bootstrap -->
+    <link href="{{asset('game/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('game/css/rest.css')}}" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
 
 <body>
@@ -22,5 +28,12 @@
     </div>
     @livewireScripts
 </body>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js">
+</script>
+<script src="{{asset('game/js/jquery.stopwatch.js')}}"></script>
+<script src="{{asset('game/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('game/js/main.min.js')}}"></script>
 
 </html>

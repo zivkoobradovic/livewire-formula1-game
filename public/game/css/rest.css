@@ -111,6 +111,42 @@ body {
   max-width: 400px;
 
 }
+.nav-justified {
+    margin-bottom: 15px;
+}
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+    color: #fff;
+    background-color: #00dd7e;
+}
+.nav-justified>li>a {
+    margin-bottom: 0;
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 2px;
+    border-radius: 10px;
+}
+.tab-content {
+  padding: 40px;
+  -webkit-backdrop-filter: saturate(180%) blur(26px);
+  backdrop-filter: saturate(180%) blur(26px);
+  background-color: hsl(0deg 0% 15% / 74%);
+  background-color: rgb(38 38 38 / 47%);
+  border-radius: 10px;
+  color: #fff;
+}
+
+label {
+
+    color: #01DC7D;
+}
+.form-control {
+  /* UI Properties */
+border: 2px solid #01DC7D;
+border-radius: 10px;
+background-color: transparent;
+line-height: 50px;
+height: 50px;
+}
 h1 {
   color: #fff;
   text-align: center;
@@ -322,6 +358,9 @@ h1 {
   }
   .game-bar h5 {
     font-size: 16px;
+  }
+  .game-footer-logo img {
+    max-width: 150px;
   }
   .track-slot, .flag-slot {
     height: 230px;
