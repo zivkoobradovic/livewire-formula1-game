@@ -10,7 +10,7 @@
             <form class="space-y-8" wire:submit.prevent="">
                 {{-- @csrf --}}
                 <div class="">
-                    <div wire:loading.delay.longest> <?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns:svg="http://www.w3.org/2000/svg"
+                    <div wire:loading.delay.longest><svg xmlns:svg="http://www.w3.org/2000/svg"
                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0" width="64px"
                         height="64px" viewBox="0 0 128 128" xml:space="preserve">
                         <g>
