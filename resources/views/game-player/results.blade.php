@@ -30,7 +30,7 @@
             border-radius: 10px;
             margin: 1px;
             font-size: 20px;
-            color: #222;
+            color: #fff;
             background-color: rgb(9, 197, 75);
         }
     </style>
@@ -46,10 +46,13 @@
   <div class="game-holder">
     <div class="game-content">
     <div class="container text-center">
+      <div class="score-content">
         <h1>Your score</h1>
         <h2>{{ $player->email }}</h2>
         <p>{{ $player->result }}</p>
+      </div>
     </div>
+    <div class="clearfix"></div>
     <div class="container  text-center">
         {!! $shareComponent !!}
     </div>

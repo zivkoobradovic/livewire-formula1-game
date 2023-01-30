@@ -427,6 +427,10 @@ h1 {
 .ui-droppable-disabled {
   border: rgb(255, 255, 255);
 }
+.score-content {
+  color: #fff;
+  padding-bottom: 50px;
+}
 @media (max-width: 600px) {
   h1 {
     font-size: 25px;
