@@ -1,27 +1,4 @@
-<div class="game-bar">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="game-logo text-anime">
-                    <img src="{{asset('game/img/logo.svg')}}" alt="">
-                </div>
-            </div>
 
-        </div>
-    </div>
-
-</div>
-<div class="game-footer">
-  <div class="container">
-      <div class="row">
-          <div class="col-md-12">
-              <div class="game-footer-logo">
-                  <img src="{{asset('game/img/footer_logo.png')}}">
-              </div>
-          </div>
-      </div>
-  </div>
-</div>
 
 <div class="game-holder">
   <div class="game-content">
@@ -131,7 +108,7 @@
 
           <section class="col-md-12">
               @foreach ($topTenPlayers as $player)
-              <div class="row">
+              <div class="result-box">
                   <div class="col-md-2 col-xs-2">
                       {{$loop->iteration}}
                   </div>
@@ -144,7 +121,7 @@
               </div>
               @endforeach
           </section>
-
+          <div class="clearfix"></div>
 
 
         </div>
