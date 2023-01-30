@@ -9,7 +9,21 @@
                         issue? Want to send feedback about a beta feature? Need details about our Business plan? Let us know.</p> -->
             <form class="space-y-8" wire:submit.prevent="">
                 {{-- @csrf --}}
-                <div>
+                <div class="">
+                    <div wire:loading.delay.longest> <?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns:svg="http://www.w3.org/2000/svg"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0" width="64px"
+                        height="64px" viewBox="0 0 128 128" xml:space="preserve">
+                        <g>
+                            <path d="M82.4 32.2a37.52 37.52 0 0 0-55 25.13L16.97 42.97.92 52.44A64.42 64.42 0 0 1 101.07 12.2l-.26 17.93z"
+                                fill="#290ac6" />
+                            <path d="M82.4 32.2a37.52 37.52 0 0 0-55 25.13L16.97 42.97.92 52.44A64.42 64.42 0 0 1 101.07 12.2l-.26 17.93z"
+                                fill="#290ac6" transform="rotate(120 64 64)" />
+                            <path d="M82.4 32.2a37.52 37.52 0 0 0-55 25.13L16.97 42.97.92 52.44A64.42 64.42 0 0 1 101.07 12.2l-.26 17.93z"
+                                fill="#290ac6" transform="rotate(240 64 64)" />
+                            <animateTransform attributeName="transform" type="rotate" from="0 64 64" to="120 64 64" dur="240ms"
+                                repeatCount="indefinite"></animateTransform>
+                        </g>
+                    </svg></div>
                     <label for="email" class="block mb-2 text-sm font-medium text-white">Your
                         email</label>
                     <input wire:model="email" wire:click="$refresh('email')"
@@ -25,8 +39,7 @@
                         class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-blue-200 dark:border-green-700 dark:placeholder-gray-400 dark:text-gray-800 dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
                         placeholder="Code">
                     @error('code') <span class="error">{{ $message }}</span> @enderror
-                    {{$code}}
-                    {{$correctCode ? 'lalalala' : 'nononono'}}
+                    {{$codeMessage ? $codeMessage : ''}}
                 </div>
                 @endif
 
@@ -75,8 +88,9 @@
                     </li>
                 </ul>
                 @endif
-                <button wire:click="{{ $playerExists ? 'playAgain' : 'startNewGame' }}"
-                    class="text-white py-3 px-5 text-lg font-medium text-center rounded-lg sm:w-fit focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 {{ $correctCode ? 'bg-green-500 hover:bg-green-300' : 'bg-blue-500  hover:bg-blue-300' }}">{{
+                <button wire:click="{{ $playerExists ? 'playAgain' : 'startNewGame' }}" {{$playerExists && !$correctCode
+                    ? 'hidden disabled' : '' }}
+                    class="text-white py-3 px-5 text-lg font-medium text-center rounded-lg sm:w-fit focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 {{ $playerExists && $correctCode ? 'bg-green-500 hover:bg-green-300' : 'bg-blue-500  hover:bg-blue-300' }}">{{
                     $playerExists ? 'Play Again' : 'Start Game' }}</button>
             </form>
         </div>

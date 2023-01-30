@@ -19,6 +19,7 @@ class Form extends Component
     public $player;
     public $newPlayer;
     public $playerExists;
+    public $codeMessage;
 
     public $topTenPlayers;
 
@@ -68,7 +69,7 @@ class Form extends Component
 
     public function updatedEmail($email)
     {
-        $this->validateOnly('email', ['email' => 'required|email']);
+        $this->validateOnly('email', ['email' => 'email:rfc,dns']);
         $this->player = GamePlayer::where('email', $this->email)->get()->first();
         if (empty($this->player)) {
             $this->playerExists = false;
@@ -86,6 +87,8 @@ class Form extends Component
         $this->validateOnly('code', ['code' => 'required']);
         if ($this->player->code === $code) {
             $this->correctCode = true;
+        } else {
+            $this->correctCode = false;
         }
     }
 }
