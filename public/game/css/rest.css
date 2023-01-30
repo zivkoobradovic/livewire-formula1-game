@@ -435,6 +435,27 @@ h1 {
 .score-content p {
     font-size: 70px;
 }
+#social-links ul {
+  padding: 0px;
+}
+#social-links {
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+#social-links ul li {
+    display: inline-block;
+}
+
+#social-links ul li a {
+    padding: 20px;
+    border: 1px solid rgb(9, 197, 75);
+    border-radius: 10px;
+    margin: 1px;
+    font-size: 20px;
+    color: #fff;
+    background-color: rgb(9, 197, 75);
+}
 @media (max-width: 600px) {
   h1 {
     font-size: 25px;
@@ -553,5 +574,18 @@ h1 {
     scale: 1.2;
     box-shadow: none;
     transition: all .2s ease;
+  }
+
+  .score-content h2 {
+    font-size: 19px;
+  }
+  .score-content p {
+      font-size: 40px;
+  }
+  #social-links ul li a {
+    padding: 10px;
+    border-radius: 10px;
+    margin: 3px;
+    font-size: 18px;
   }
 }
