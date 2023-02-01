@@ -20,6 +20,7 @@ class Form extends Component
     public $newPlayer;
     public $playerExists;
     public $codeMessage;
+    public $status;
 
     public $topTenPlayers;
 
@@ -69,16 +70,30 @@ class Form extends Component
 
     public function updatedEmail($email)
     {
-        $this->validateOnly('email', ['email' => 'email:rfc,dns']);
+        $this->validateOnly('email', ['email' => 'required|email:rfc,dns']);
         $this->player = GamePlayer::where('email', $this->email)->get()->first();
-        if (empty($this->player)) {
+        if ($this->player && !$this->player->status) {
+            // player exists without code
+            $this->status = false;
+            $this->playerExists = true;
+            $this->checkingCode = false;
+            $this->username = $this->player->username;
+            $this->phone = $this->player->phone;
+            $this->avatar = $this->player->avatar;
+        }
+        else if ($this->player && $this->email === $this->player->email && $this->player->status) {
+            // player exists with code
+            $this->status = true;
+            $this->playerExists = true;
+            $this->checkingCode = true;
+        } else if (empty($this->player)) {
+            // player doesn't exist
+            $this->status = false;
             $this->playerExists = false;
             $this->checkingCode = false;
             $this->username = '';
             $this->phone = '';
-        } else if ($this->player && $this->email === $this->player->email) {
-            $this->checkingCode = true;
-            $this->playerExists = true;
+            $this->avatar = '';
         }
     }
 
