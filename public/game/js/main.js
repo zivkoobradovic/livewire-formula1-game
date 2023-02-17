@@ -110,11 +110,13 @@ function handleSuitDrop(event, ui) {
   }
 }
 $('.text-anime').click(function() {
-  nextGame();
+  // nextGame();
+    $('#correct-audio').get(0).play();
 });
+
 function nextGame() {
   if(game < 4) {
-    $('#correct-audio').get(0).play();
+    $('.text-anime').trigger('click');
     $('#game-'+game).fadeOut();
     game++;
     $('.correct-pop').fadeIn(function(){
