@@ -20,7 +20,13 @@
 </head>
 
 <body>
+  <audio id="correct-audio" src="{{asset('game/sounds/collect-5930.mp3')}}"></audio>
+
+
     <div class="loader"></div>
+    <div class="correct-pop">
+      <div class="correct-pop-content"></div>
+    </div>
     <div class="game-bar">
         <div class="container">
             <div class="row">
@@ -49,7 +55,7 @@
           <div class="row">
               <div class="col-md-12">
                   <div class="game-footer-logo">
-                      <img src="{{asset('game/img/footer_logo.png')}}">
+                      <img src="{{asset('game/img/logo_otf.svg')}}">
                   </div>
               </div>
           </div>
@@ -61,7 +67,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1>Select the<br>race track in USA</h1>
+                            <h1>Find the race track<br>Jeddah Corniche Circuit</h1>
                         </div>
                         <div class="col-md-6">
                             <div class="track-slot" data-id="2">
@@ -82,7 +88,7 @@
                                 </li>
                                 <li>
                                     <div class="track-box" data-track="1">
-                                        <img src="{{asset('game/img/usa.png')}}" alt="">
+                                        <img src="{{asset('game/img/jeddah.png')}}" alt="">
                                     </div>
                                 </li>
                                 <li>
@@ -118,12 +124,12 @@
                         <div class="col-md-12">
                             <h1>Put the parts<br>in the right place</h1>
                         </div>
-                        <div class="col-md-10">
+                        <div class="col-md-8 col-md-push-1">
                             <div class="car-holder">
                                 <div class="part-slot part-slot-1" data-part="1"></div>
                                 <div class="part-slot part-slot-2" data-part="2"></div>
                                 <div class="part-slot part-slot-3" data-part="3"></div>
-                                <img src="{{asset('game/img/znragzyc9s.png')}}" width="100%">
+                                <img src="{{asset('game/img/znragzycids.png')}}" width="100%">
                             </div>
                         </div>
                         <div class="col-md-2">
@@ -201,8 +207,40 @@
             </div>
         </div>
     </div>
-
     <div class="game-view" id="game-4">
+        <div class="game-holder">
+            <div class="game-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1>Who is <br>the winner?</h1>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="winner-holder">
+                                <div class="winner-slot winner-slot-1" data-suit="1"></div>
+                                <div class="winner-slot winner-slot-2" data-suit="2"></div>
+                                <img src="{{asset('game/img/podium.png')}}" width="100%">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <ul class="winner-list">
+                                <li>
+                                    <div class="winner-box" data-winner="1"><img src="{{asset('game/img/winner2.png')}}"></div>
+                                </li>
+                                <li>
+                                    <div class="winner-box" data-winner="2"><img src="{{asset('game/img/winner2.png')}}"></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="game-view" id="game-5">
         <div class="game-holder">
             <div class="game-content">
                 <div class="container">
@@ -253,7 +291,8 @@
     </script>
     <script src="{{asset('game/js/jquery.stopwatch.js')}}"></script>
     <script src="{{asset('game/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('game/js/main.min.js')}}"></script>
+    <script src="{{asset('game/js/main.js')}}"></script>
+
 </body>
 
 </html>

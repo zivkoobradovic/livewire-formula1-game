@@ -114,10 +114,20 @@ $('.text-anime').click(function() {
 });
 function nextGame() {
   if(game < 4) {
-    $('#game-'+game).slideUp();
+    $('#correct-audio').get(0).play();
+    $('#game-'+game).fadeOut();
     game++;
-    $('#game-'+game).fadeIn();
-    $('.game-status span').text(game);
+    $('.correct-pop').fadeIn(function(){
+
+
+    }).delay(300).fadeOut(function(){
+      $('#game-'+game).slideDown();
+      $('.game-status span').text(game);
+    });
+
+
+
+
   } else {
     $('.loader').slideDown(function() {
       $('.game-time span').stopwatch().stopwatch('stop');

@@ -1,13 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@font-face {
+    font-family: 'Formula1 Display';
+    src: url('../fonts/Formula1-Display-Regular.woff2') format('woff2'),
+        url('../fonts/Formula1-Display-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Formula1 Display Bold';
+    src: url('../fonts/Formula1-Display-Bold.woff2') format('woff2'),
+        url('../fonts/Formula1-Display-Bold.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Formula1 Display Wide';
+    src: url('../fonts/Formula1-Display-Wide.woff2') format('woff2'),
+        url('../fonts/Formula1-Display-Wide.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+
 body, html {
   width: 100%;
   height: 100vh;
   overflow: hidden;
 }
 body {
-  font-family: 'Racing Sans One', cursive;
-  background-image: url(../img/bg.jpg);
+  font-family: 'Formula1 Display Bold';
+  background-image: url(../img/bg_f1.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -24,13 +52,43 @@ body {
   background-image: url(../img/logo.svg);
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: 140px;
+  background-size: 400px;
   -webkit-backdrop-filter: saturate(180%) blur(26px);
   backdrop-filter: saturate(180%) blur(26px);
   background-color: hsl(0deg 0% 15% / 74%);
   background-color: rgb(38 38 38 / 47%);
-  animation: opulse 0.6s infinite ease-in-out alternate;
+  animation: opulseBg 0.6s infinite ease-in-out alternate;
+}
+.correct-pop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background-image: url(https://usagif.com/wp-content/uploads/gif/confetti-10.gif);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  display: none;
+}
+.correct-pop-content {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  background-color: #fff;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+  background-image: url(https://i.gifer.com/origin/41/41340ab1a4529c7dd753f03268087e08.gif);
+  background-size: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .pulse {
   animation: pulse 1s infinite ease-in-out alternate;
@@ -46,10 +104,17 @@ body {
 .opulse {
   animation: pulse 1s infinite ease-in-out alternate;
 }
-
+@keyframes opulseBg {
+  from { background-size: 300px; }
+  to { background-size: 350px; }
+}
 @keyframes opulse {
   from { background-size: 140px; }
   to { background-size: 160px; }
+}
+@keyframes pulsePart {
+  from { background-size: 90px; }
+  to { background-size: 100px; }
 }
 @keyframes bounce2 {
 	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
@@ -67,11 +132,11 @@ body {
 }
 .game-logo {
   text-align: center;
-  padding-top: 10px;
+  padding-top: 0px;
 }
 .game-logo img {
   width: 100%;
-  max-width: 150px;
+  max-width: 200px;
   animation: pulse 1s infinite ease-in-out alternate;
 }
 .game-bar {
@@ -109,7 +174,7 @@ body {
 }
 .game-footer-logo img {
   width: 100%;
-  max-width: 400px;
+  max-width: 130px;
 
 }
 .nav-justified {
@@ -240,19 +305,19 @@ h1 {
   display: block;
 }
 .track-slot, .flag-slot {
-  background-color: #fff;
-  box-shadow: 4px 4px 15px 0 hsl(0deg 0% 59% / 19%);
-  border-radius: 10px;
-  padding: 50px;
-  height: 500px;
-  transition: all .2s ease;
-  text-align: center;
-  vertical-align: middle;
-  animation: bounce2 2s ease infinite;
-  -webkit-backdrop-filter: saturate(180%) blur(26px);
-  backdrop-filter: saturate(180%) blur(26px);
-  background-color: hsl(253deg 36% 41%);
-  background-color: rgb(35 7 116 / 72%);
+    background-color: #fff;
+    box-shadow: 4px 4px 15px 0 hsl(0deg 0% 59% / 19%);
+    border-radius: 10px;
+    padding: 50px;
+    height: 500px;
+    transition: all .2s ease;
+    text-align: center;
+    vertical-align: middle;
+    animation: bounce2 2s ease infinite;
+    -webkit-backdrop-filter: saturate(180%) blur(26px);
+    backdrop-filter: saturate(180%) blur(26px);
+    background-color: hsl(121deg 33% 35% / 54%);
+    background-color: #a9ff934d;
 }
 .track-slot small, .flag-slot small {
   color: #eee;
@@ -293,17 +358,18 @@ h1 {
   position: relative;
   width: 100%;
   float: left;
+  text-align: center;
 }
 .car-holder img {
   width: 100%;
-  float: left;
+  max-width: 740px;
 }
 .part-slot {
   background-color: #fff;
   box-shadow: 4px 4px 15px 0 hsl(0deg 0% 59% / 19%);
   position: absolute;
-  width: 110px;
-  height: 110px;
+  width: 100px;
+  height: 100px;
   border-radius: 10px;
   animation: pulse 1s infinite ease-in-out alternate;
   border-style: solid;
@@ -311,27 +377,29 @@ h1 {
   box-shadow: 4px 4px 15px 0 hsl(0deg 0% 59% / 19%);
 }
 .part-slot-1 {
-  top: 107px;
-  left: 460px;
+  top: 11%;
+  left: 69%;
 }
 .part-slot-2 {
-  top: 340px;
-  left: 310px;
+    top: 33%;
+    left: 35%;
 }
 .part-slot-3 {
-  top: 310px;
-  left: 30px;
+    top: 71%;
+    left: 44%;
 }
 .part-list {
   list-style: none;
+  text-align: center;
 }
 .part-list li {
-  list-style: none;
-  margin-top: 20px;
-  margin-bottom: 20px;
+    list-style: none;
+    /* display: inline-block; */
+    width: 100px;
+    margin-top: 30%;
 }
 .part-box {
-  margin: 5px;
+
   background-color: #fff;
   box-shadow: 4px 4px 15px 0 hsl(0deg 0% 59% / 19%);
   border-radius: 10px;
@@ -413,9 +481,41 @@ h1 {
   box-shadow: none;
   transition: all .2s ease;
 }
+/**/
+.winner-holder {
+  text-align: center;
+}
+.winner-slot {
+    box-shadow: 4px 4px 15px 0 hsl(0deg 0% 59% / 19%);
+    /* position: absolute; */
+    width: 220px;
+    height: 290px;
+    border-radius: 10px;
+    animation: pulse 1s infinite ease-in-out alternate;
+    background-color: #eee;
+    margin-right: 10px;
+    display: inline-block;
+    box-shadow: 4px 4px 15px 0 hsl(0deg 0% 59% / 19%);
+}
+.winner-slot-1 {
+      margin-bottom: -60px;
+}
+.winner-list {
+    list-style: none;
+    padding: 0px;
+}
+.winner-list li {
+  list-style: none;
+  float: left;
+  width: 100%;
+}
+.winner-list li img {
+  list-style: none;
+  float: left;
+  width: 100%;
+}
 .hovered {
   transition: all .2s ease;
-  z-index: 999;
   box-shadow: 4px 4px 15px 0 hsl(0deg 0% 59% / 19%);
   transform: scale(1.2, 1.2);
 }
@@ -468,10 +568,10 @@ h1 {
     max-width: 130px;
   }
   .game-bar h5 {
-    font-size: 16px;
+    font-size: 12px;
   }
   .game-footer-logo img {
-    max-width: 150px;
+    max-width: 60px;
   }
 
   .nav-justified>li {
@@ -509,7 +609,9 @@ h1 {
   .part-list li {
     width: 33.33333%;
     float: left;
+    margin-top: 0px;
   }
+
   .part-box {
     width: 50px;
     height: 50px;
@@ -518,18 +620,7 @@ h1 {
       width: 50px;
       height: 50px;
   }
-  .part-slot-1 {
-    top: 37px;
-    left: 150px;
-  }
-  .part-slot-2 {
-    top: 63%;
-    left: 30%;
-  }
-  .part-slot-3 {
-    top: 60%;
-    left: 0px;
-  }
+
   .driver-holder {
     text-align: center;
   }
