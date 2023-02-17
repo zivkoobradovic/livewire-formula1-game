@@ -94,7 +94,7 @@ body {
   animation: pulse 1s infinite ease-in-out alternate;
 }
 @keyframes pulse {
-  from { transform: scale(0.95); }
+  from { transform: scale(0.97); }
   to { transform: scale(1); }
 }
 .bounce2 {
@@ -163,6 +163,15 @@ body {
 .game-content {
   display: table-cell;
   vertical-align: middle;
+}
+.game-content .container {
+  background-color: transparent;
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(10px);
+  background-color: hsl(156deg 65% 48% / 30%);
+  background-color: rgb(43 200 138 / 30%);
+  padding-bottom: 20px;
+  border-radius: 15px;
 }
 .game-footer {
   position: fixed;
@@ -292,11 +301,13 @@ label {
   float: left;
 }
 h1 {
-  color: #fff;
-  text-align: center;
-  font-size: 65px;
-  margin-bottom: 40px;
-  text-shadow: 3px 3px 2px rgb(4 44 17);
+    color: #fff;
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 40px;
+    /* margin-top: 20px; */
+    padding-top: 20px;
+    text-shadow: 3px 3px 2px rgb(4 44 17);
 }
 .game-view {
   display: none;
@@ -313,11 +324,13 @@ h1 {
     transition: all .2s ease;
     text-align: center;
     vertical-align: middle;
-    animation: bounce2 2s ease infinite;
-    -webkit-backdrop-filter: saturate(180%) blur(26px);
-    backdrop-filter: saturate(180%) blur(26px);
-    background-color: hsl(121deg 33% 35% / 54%);
-    background-color: #a9ff934d;
+    border-radius: 10px;
+        animation: pulse 1s infinite ease-in-out alternate;
+        border-style: solid;
+        border-color: #eee;
+        box-shadow: 4px 4px 15px 0 hsl(0deg 0% 59% / 19%);
+
+
 }
 .track-slot small, .flag-slot small {
   color: #eee;
@@ -325,6 +338,7 @@ h1 {
 }
 .track-list, .flag-list {
   list-style: none;
+  padding: 0px;
 }
 .track-list li, .flag-list li {
   list-style: none;
@@ -377,15 +391,15 @@ h1 {
   box-shadow: 4px 4px 15px 0 hsl(0deg 0% 59% / 19%);
 }
 .part-slot-1 {
-  top: 11%;
-  left: 69%;
+  top: 3%;
+  left: 71%;
 }
 .part-slot-2 {
-    top: 33%;
+    top: 30%;
     left: 35%;
 }
 .part-slot-3 {
-    top: 71%;
+    top: 76%;
     left: 44%;
 }
 .part-list {
@@ -483,16 +497,17 @@ h1 {
 }
 /**/
 .winner-holder {
-  text-align: center;
+    text-align: center;
+    margin-bottom: -20px;
 }
 .winner-slot {
     box-shadow: 4px 4px 15px 0 hsl(0deg 0% 59% / 19%);
     /* position: absolute; */
     width: 220px;
-    height: 290px;
+    height: 340px;
     border-radius: 10px;
     animation: pulse 1s infinite ease-in-out alternate;
-    background-color: #eee;
+    background-color: #fff;
     margin-right: 10px;
     display: inline-block;
     box-shadow: 4px 4px 15px 0 hsl(0deg 0% 59% / 19%);
@@ -503,21 +518,37 @@ h1 {
 .winner-list {
     list-style: none;
     padding: 0px;
+    padding-top: 70px;
 }
 .winner-list li {
-  list-style: none;
-  float: left;
-  width: 100%;
+    list-style: none;
+    float: left;
+    width: 100%;
 }
 .winner-list li img {
-  list-style: none;
+    list-style: none;
+    float: left;
+    width: 100%;
+}
+.winner-box {
+    background-color: #fff;
+    box-shadow: 4px 4px 15px 0 hsl(0deg 0% 59% / 19%);
+    border-radius: 10px;
+    padding: 2px;
   float: left;
+  text-align: center;
+}
+.winner-box img {
   width: 100%;
+  border-radius: 10px;
+}
+.correct-winner {
+  box-shadow: none;
 }
 .hovered {
   transition: all .2s ease;
   box-shadow: 4px 4px 15px 0 hsl(0deg 0% 59% / 19%);
-  transform: scale(1.2, 1.2);
+  transform: scale(1.1, 1.1);
 }
 .ui-draggable-dragging {
   background-color: #fff;

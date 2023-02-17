@@ -65,7 +65,7 @@
         <div class="game-holder">
             <div class="game-content">
                 <div class="container">
-                    <div class="row">
+                    <div>
                         <div class="col-md-12">
                             <h1>Find the race track<br>Jeddah Corniche Circuit</h1>
                         </div>
@@ -120,19 +120,19 @@
         <div class="game-holder">
             <div class="game-content">
                 <div class="container">
-                    <div class="row">
+                    <div>
                         <div class="col-md-12">
                             <h1>Put the parts<br>in the right place</h1>
                         </div>
-                        <div class="col-md-8 col-md-push-1">
+                        <div class="col-md-8 col-md-push-2">
                             <div class="car-holder">
                                 <div class="part-slot part-slot-1" data-part="1"></div>
                                 <div class="part-slot part-slot-2" data-part="2"></div>
                                 <div class="part-slot part-slot-3" data-part="3"></div>
-                                <img src="{{asset('game/img/znragzycids.png')}}" width="100%">
+                                <img src="{{asset('game/img/f1_car.png')}}" width="100%">
                             </div>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-2 col-md-push-2">
                             <ul class="part-list">
                                 <li>
                                     <div class="part-box" data-part="1"><img src="{{asset('game/img/part1.png')}}"></div>
@@ -157,7 +157,7 @@
         <div class="game-holder">
             <div class="game-content">
                 <div class="container">
-                    <div class="row">
+                    <div>
                         <div class="col-md-12">
                             <h1>Select the<br>finish flag</h1>
                         </div>
@@ -211,24 +211,30 @@
         <div class="game-holder">
             <div class="game-content">
                 <div class="container">
-                    <div class="row">
+                    <div>
                         <div class="col-md-12">
                             <h1>Who is <br>the winner?</h1>
                         </div>
-                        <div class="col-md-9">
+                        <div class="col-md-2">
+                            <ul class="winner-list">
+                                <li>
+                                  <div class="winner-box" data-winner="2"><img src="{{asset('game/img/winner1.png')}}"></div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-8">
                             <div class="winner-holder">
-                                <div class="winner-slot winner-slot-1" data-suit="1"></div>
-                                <div class="winner-slot winner-slot-2" data-suit="2"></div>
+                                <div class="winner-slot winner-slot-1" data-winner="1"></div>
+                                <div class="winner-slot winner-slot-2" data-winner="2"></div>
                                 <img src="{{asset('game/img/podium.png')}}" width="100%">
                             </div>
                         </div>
-                        <div class="col-md-3">
+
+                        <div class="col-md-2">
                             <ul class="winner-list">
                                 <li>
-                                    <div class="winner-box" data-winner="1"><img src="{{asset('game/img/winner2.png')}}"></div>
-                                </li>
-                                <li>
-                                    <div class="winner-box" data-winner="2"><img src="{{asset('game/img/winner2.png')}}"></div>
+                                  <div class="winner-box" data-winner="1"><img src="{{asset('game/img/winner2.png')}}"></div>
                                 </li>
                             </ul>
                         </div>

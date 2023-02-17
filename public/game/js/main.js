@@ -80,6 +80,37 @@ function handleFlagDrop(event, ui) {
   nextGame();
   }
 }
+///GAME WINNER///
+$('.winner-box').draggable( {
+  containment: '#game-4',
+  stack: '.winner-box',
+  cursor: 'move',
+  revert: true
+} );
+
+$('.winner-slot').droppable( {
+  accept: '.winner-box',
+  hoverClass: 'hovered',
+  drop: handleWinnerDrop
+} );
+
+var correctWinner = 0;
+function handleWinnerDrop(event, ui) {
+  var slotWinner = $(this).data('winner');
+  var boxWinner = ui.draggable.data('winner');
+  if (slotWinner === boxWinner) {
+    ui.draggable.draggable('disable');
+    ui.draggable.position({
+      of: $(this), my: 'center center', at: 'center center'
+    });
+    ui.draggable.addClass('correct-winner');
+    ui.draggable.draggable('option', 'revert', false);
+    correctWinner++;
+    if(correctWinner === 2) {
+      nextGame();
+    }
+  }
+}
 ///GAME DRIVER///
 $('.suit-box').draggable( {
   containment: '#game-4',
