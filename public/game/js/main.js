@@ -199,7 +199,7 @@ var answerHolder = $('.answer-list'),
     answerHolder.html(newAnswerList);
 $('.answer-list li').click(function() {
   var answer = $(this).data('answer');
-  if (answer == 1) {
+  if (answer == 2) {
     $(this).addClass('correct');
     nextGame();
   } else {
