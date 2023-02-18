@@ -1,5 +1,8 @@
 var game = 1;
 ///GAME TRACK///
+$('.track-list').click(function() {
+    $('#correct-audio').get(0).play();
+});
 
 var trackHolder = $('.track-list'),
     trackList = trackHolder.find('li').detach(),

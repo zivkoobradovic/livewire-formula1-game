@@ -51,6 +51,18 @@
         </div>
 
     </div>
+    <div class="game-footer">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="game-footer-logo">
+                      <img src="{{asset('game/img/logo_otf.svg')}}">
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+
     <div class="game-view" id="game-1">
         <div class="game-holder">
             <div class="game-content">
@@ -259,17 +271,6 @@
 
 
 
-    <div class="game-footer">
-      <div class="container">
-          <div class="row">
-              <div class="col-md-12">
-                  <div class="game-footer-logo">
-                      <img src="{{asset('game/img/logo_otf.svg')}}">
-                  </div>
-              </div>
-          </div>
-      </div>
-    </div>
 
     <form action="{{ route('end-game', ['player' => $player->slug]) }}" method="POST" id="formEnd">
         @csrf
