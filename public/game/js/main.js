@@ -1,5 +1,18 @@
 var game = 1;
 ///GAME TRACK///
+
+var trackHolder = $('.track-list'),
+    trackList = trackHolder.find('li').detach(),
+    usedTrackList = [],
+    newTrackList = [];
+    while (true) {
+      var liTrack = trackList[Math.floor(Math.random() * trackList.length)];
+      if (usedTrackList.indexOf(liTrack) === -1 && newTrackList.indexOf(liTrack) === -1) newTrackList.push(liTrack);
+      if (newTrackList.length >= 6) break;
+    }
+    usedTrackList = newTrackList;
+    trackHolder.html(newTrackList);
+
 $('.track-box').draggable( {
   containment: '#game-1',
   stack: '.track-box',
@@ -21,9 +34,24 @@ function handleTrackDrop(event, ui) {
   ui.draggable.addClass('correct');
   ui.draggable.draggable('option', 'revert', false);
   nextGame();
-  }
+} else {
+  wrongPlay();
+  ui.draggable.addClass('wrong');
+}
 }
 ///GAME PART///
+var partHolder = $('.part-list'),
+    partList = partHolder.find('li').detach(),
+    usedPartList = [],
+    newPartList = [];
+    while (true) {
+      var liPart = partList[Math.floor(Math.random() * partList.length)];
+      if (usedPartList.indexOf(liPart) === -1 && newPartList.indexOf(liPart) === -1) newPartList.push(liPart);
+      if (newPartList.length >= 3) break;
+    }
+    usedPartList = newPartList;
+    partHolder.html(newPartList);
+
 $('.part-box').draggable( {
   containment: '#game-2',
   stack: '.part-box',
@@ -48,13 +76,27 @@ function handlePartDrop(event, ui) {
     });
     ui.draggable.addClass('correct-part');
     ui.draggable.draggable('option', 'revert', false);
+    correctPlay();
     correctPart++;
     if(correctPart === 3) {
       nextGame();
     }
+  } else {
+    wrongPlay();
   }
 }
 ///GAME FLAG///
+var flagHolder = $('.flag-list'),
+    flagList = flagHolder.find('li').detach(),
+    usedFlagList = [],
+    newFlagList = [];
+    while (true) {
+      var liFlag = flagList[Math.floor(Math.random() * flagList.length)];
+      if (usedFlagList.indexOf(liFlag) === -1 && newFlagList.indexOf(liFlag) === -1) newFlagList.push(liFlag);
+      if (newFlagList.length >= 6) break;
+    }
+    usedFlagList = newFlagList;
+    flagHolder.html(newFlagList);
 $('.flag-box').draggable( {
   containment: '#game-3',
   stack: '.flag-box',
@@ -78,6 +120,9 @@ function handleFlagDrop(event, ui) {
   ui.draggable.addClass('correct');
   ui.draggable.draggable('option', 'revert', false);
   nextGame();
+  } else {
+    wrongPlay();
+    ui.draggable.addClass('wrong');
   }
 }
 ///GAME WINNER///
@@ -140,13 +185,41 @@ function handleSuitDrop(event, ui) {
     }
   }
 }
+///GAME ANSWERS///
+var answerHolder = $('.answer-list'),
+    answerList = answerHolder.find('li').detach(),
+    usedAnswerList = [],
+    newAnswerList = [];
+    while (true) {
+      var liAnswer = answerList[Math.floor(Math.random() * answerList.length)];
+      if (usedAnswerList.indexOf(liAnswer) === -1 && newAnswerList.indexOf(liAnswer) === -1) newAnswerList.push(liAnswer);
+      if (newAnswerList.length >= 3) break;
+    }
+    usedAnswerList = newAnswerList;
+    answerHolder.html(newAnswerList);
+$('.answer-list li').click(function() {
+  var answer = $(this).data('answer');
+  if (answer == 1) {
+    $(this).addClass('correct');
+    nextGame();
+  } else {
+    $(this).addClass('wrong');
+    wrongPlay();
+  }
+});
+
 $('.text-anime').click(function() {
   // nextGame();
     $('#correct-audio').get(0).play();
 });
-
+function wrongPlay() {
+  $('#wrong-audio').get(0).play();
+}
+function correctPlay() {
+  $('#correct-audio').get(0).play();
+}
 function nextGame() {
-  if(game < 4) {
+  if(game < 5) {
     $('.text-anime').trigger('click');
     $('#game-'+game).fadeOut();
     game++;

@@ -115,6 +115,7 @@
                                     </li>
                                 </ul>
                                 @endif
+
                                 <button wire:click="{{ $playerExists ? 'playAgain' : 'startNewGame' }}" @if ($playerExists && $status === false)
                                     {{''}}
                                     @elseif ($playerExists && !$correctCode)
@@ -122,8 +123,12 @@
                                     @elseif (!$playerExists)
                                     {{''}}
                                     @endif
-                                    class="btn btn-lg btn-primary btn-block {{ $playerExists && $correctCode ? 'bg-green-500 hover:bg-green-300' : 'bg-blue-500  hover:bg-blue-300' }}">{{
-                                    $playerExists ? 'Play Again' : 'Start Game' }}</button>
+                                    class="btn btn-lg btn-primary btn-block {{ $playerExists && $correctCode ? 'bg-green-500 hover:bg-green-300' : 'bg-blue-500  hover:bg-blue-300' }} pushable">
+
+                                    <span class="front">
+
+                                    {{
+                                    $playerExists ? 'Play Again' : 'Start Game' }}</span></button>
                             </form>
                         </div>
                     </section>
@@ -177,7 +182,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="game-footer-logo">
-                    <img src="{{asset('game/img/footer_logo.png')}}">
+                  <img src="{{asset('game/img/logo_otf.svg')}}">
                 </div>
             </div>
         </div>

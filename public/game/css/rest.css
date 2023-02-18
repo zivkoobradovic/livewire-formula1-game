@@ -31,6 +31,7 @@
 body, html {
   width: 100%;
   height: 100vh;
+
   overflow: hidden;
 }
 body {
@@ -64,7 +65,7 @@ body {
   width: 100%;
   height: 100%;
   z-index: 999;
-  background-image: url(https://usagif.com/wp-content/uploads/gif/confetti-10.gif);
+  background-image: url(../img/confetti-10.gif);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -85,7 +86,7 @@ body {
   left: 50%;
   margin-top: -50px;
   margin-left: -50px;
-  background-image: url(https://i.gifer.com/origin/41/41340ab1a4529c7dd753f03268087e08.gif);
+  background-image: url(../img/correct.gif);
   background-size: 300px;
   background-position: center;
   background-repeat: no-repeat;
@@ -130,6 +131,45 @@ body {
   50% { transform: scale(1.1, 0.9); }
   75% { transform: scale(0.95, 1.05); }
 }
+
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+  .pushable {
+    background: hsl(340deg 100% 32%);
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+  }
+  .front {
+    display: block;
+    padding: 12px 42px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    background: hsl(345deg 100% 47%);
+    color: white;
+    transform: translateY(-6px);
+  }
+
+  .pushable:active .front {
+    transform: translateY(-2px);
+  }
+
+  .btn-primary:hover {
+      background-color: #c00634;
+  }
 .game-logo {
   text-align: center;
   padding-top: 0px;
@@ -168,10 +208,14 @@ body {
   background-color: transparent;
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   backdrop-filter: saturate(180%) blur(10px);
-  background-color: hsl(156deg 65% 48% / 30%);
-  background-color: rgb(43 200 138 / 30%);
+  /* background-color: hsl(156deg 65% 48% / 30%);
+  background-color: rgb(43 200 138 / 30%); */
   padding-bottom: 20px;
   border-radius: 15px;
+  box-shadow: 20px 20px 80px 5px rgb(0 0 0 / 56%);
+  background: linear-gradient(-45deg, #20b8dd8a, #e73c7e9e, #6bc95742, #beeb8496);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
 }
 .game-footer {
   position: fixed;
@@ -188,6 +232,7 @@ body {
 }
 .nav-justified {
   margin-bottom: 15px;
+      margin-top: 15px;
 }
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
   color: #fff;
@@ -216,8 +261,6 @@ body {
   color: #fff;
 }
 .tab-content .btn-primary {
-  background-color: transparent;
-  border-color: #00dd7e;
   border-width: 2px;
   border-radius: 10px;
   margin-top: 10px;
@@ -312,6 +355,19 @@ h1 {
 .game-view {
   display: none;
 }
+
+.wrong {
+      border-style: solid !important;
+    border-color: #de0000 !important;
+      transition: all .2s ease;
+}
+.correct {
+  scale: 2;
+  box-shadow: none;
+      border-style: solid !important;
+    border-color: #03cb00 !important;
+      transition: all .2s ease;
+}
 #game-1 {
   display: block;
 }
@@ -353,6 +409,14 @@ h1 {
   padding: 10px;
   height: 160px;
   text-align: center;
+  cursor: pointer;
+  transition: all .1s ease;
+
+}
+.track-box:hover, .flag-box:hover {
+    box-shadow: 0px 0px 20px 11px rgb(102 220 132);
+    transition: all .2s ease;
+    z-index: 99;
 }
 .track-box img, .flag-box img {
   width: auto;
@@ -363,11 +427,7 @@ h1 {
   float: left;
   width: 100%;
 }
-.correct {
-  scale: 2;
-  box-shadow: none;
-  transition: all .2s ease;
-}
+
 .car-holder {
   position: relative;
   width: 100%;
@@ -403,8 +463,9 @@ h1 {
     left: 44%;
 }
 .part-list {
-  list-style: none;
-  text-align: center;
+    list-style: none;
+    text-align: center;
+    padding: 0px;
 }
 .part-list li {
     list-style: none;
@@ -418,6 +479,13 @@ h1 {
   box-shadow: 4px 4px 15px 0 hsl(0deg 0% 59% / 19%);
   border-radius: 10px;
   padding: 2px;
+  transition: all .1s ease;
+  cursor: pointer;
+}
+.part-box:hover {
+box-shadow: 0px 0px 20px 11px rgb(102 220 132);
+transition: all .2s ease;
+z-index: 99;
 }
 .part-box img {
   width: 100%;
@@ -536,7 +604,14 @@ h1 {
     border-radius: 10px;
     padding: 2px;
   float: left;
+      transition: all .1s ease;
   text-align: center;
+  cursor: pointer;
+}
+.winner-box:hover {
+    box-shadow: 0px 0px 20px 11px rgb(102 220 132);
+    transition: all .2s ease;
+    z-index: 99;
 }
 .winner-box img {
   width: 100%;
@@ -545,6 +620,27 @@ h1 {
 .correct-winner {
   box-shadow: none;
 }
+/**/
+.answer-list {
+    padding: 0px;
+    list-style: none;
+}
+.answer-list li {
+    width: 31.33333%;
+    float: left;
+    padding: 20px;
+    box-shadow: 4px 4px 15px 0 hsl(0deg 0% 59% / 19%);
+    border-radius: 10px;
+    background-color: #fff;
+    text-align: center;
+    margin: 1%;
+    cursor: pointer;
+    border-style: solid;
+    border-color: #fff;
+    font-size: 22px;
+    line-height: 110px;
+}
+
 .hovered {
   transition: all .2s ease;
   box-shadow: 4px 4px 15px 0 hsl(0deg 0% 59% / 19%);
@@ -554,6 +650,7 @@ h1 {
   background-color: #fff;
   transform: scale(1.2, 1.2);
   box-shadow: 4px 4px 15px 0 hsl(0deg 0% 59% / 19%);
+  transition: all .0s ease;
 }
 .ui-droppable-disabled {
   border: rgb(255, 255, 255);
@@ -587,9 +684,72 @@ h1 {
     color: #fff;
     background-color: rgb(9, 197, 75);
 }
+@media (max-width: 1200px) {
+  .container {
+      width: 100%;
+  }
+}
+@media (max-width: 990px) {
+  .track-box img, .flag-box img {
+    width: 100%;
+    height: auto;
+  }
+}
+@media (max-width: 850px) {
+  .game-bar h5 {
+    font-size: 22px;
+  }
+  .track-box, .flag-box {
+    height: auto;
+    float: left;
+  }
+
+.track-slot, .flag-slot {
+  height: 350px;
+}
+  .track-slot small, .flag-slot small {
+    color: #eee;
+    font-size: 85px;
+}
+}
+
+/* @media (max-height: 1100px) {
+  body, html {
+
+    overflow: scroll;
+  }
+  .game-bar, .game-footer {
+    position: relative;
+    width: 100%;
+    float: left;
+}
+
+.game-content {
+    display: block;
+  }
+} */
+
+@media (max-width: 768px) {
+  .track-list li, .flag-list li {
+    width: 33.33333%;
+    text-align: center;
+  }
+  .part-list {
+    padding-top: 20px;
+  }
+  .part-list li {
+      display: inline-block;
+      margin-top: 0px;
+  }
+  .part-box {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+  }
+}
 @media (max-width: 600px) {
   h1 {
-    font-size: 25px;
+    font-size: 22px;
     margin-bottom: 10px;
   }
   .game-bar {
@@ -626,9 +786,7 @@ h1 {
     list-style: none;
     padding: 0px;
   }
-  .track-list li, .flag-list li {
-    width: 33.33333%;
-  }
+
   .track-box, .flag-box {
     height: auto;
     float: left;
@@ -643,10 +801,7 @@ h1 {
     margin-top: 0px;
   }
 
-  .part-box {
-    width: 50px;
-    height: 50px;
-  }
+
   .part-slot {
       width: 50px;
       height: 50px;
@@ -697,7 +852,10 @@ h1 {
     box-shadow: none;
     transition: all .2s ease;
   }
-
+  .answer-list li {
+    font-size: 16px;
+    line-height: 60px;
+  }
   .score-content h2 {
     font-size: 19px;
   }

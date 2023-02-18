@@ -20,7 +20,8 @@
 </head>
 
 <body>
-  <audio id="correct-audio" src="{{asset('game/sounds/collect-5930.mp3')}}"></audio>
+  <audio id="correct-audio" src="{{asset('game/sounds/collect-5931.mp3')}}"></audio>
+  <audio id="wrong-audio" src="{{asset('game/sounds/wrong-47984.mp3')}}"></audio>
 
 
     <div class="loader"></div>
@@ -32,7 +33,7 @@
             <div class="row">
                 <div class="col-md-4 col-xs-4">
                     <div class="game-status">
-                        <h5>Game <span>1</span> of 4</h5>
+                        <h5>Game <span>1</span> of 5</h5>
                     </div>
                 </div>
                 <div class="col-md-4 col-xs-4">
@@ -50,31 +51,20 @@
         </div>
 
     </div>
-    <div class="game-footer">
-      <div class="container">
-          <div class="row">
-              <div class="col-md-12">
-                  <div class="game-footer-logo">
-                      <img src="{{asset('game/img/logo_otf.svg')}}">
-                  </div>
-              </div>
-          </div>
-      </div>
-    </div>
     <div class="game-view" id="game-1">
         <div class="game-holder">
             <div class="game-content">
                 <div class="container">
                     <div>
                         <div class="col-md-12">
-                            <h1>Find the race track<br>Jeddah Corniche Circuit</h1>
+                            <h1>Find Jeddah Cornish Circuit</h1>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6">
                             <div class="track-slot" data-id="2">
                                 <small>Drag here</small>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6">
                             <ul class="track-list">
                                 <li>
                                     <div class="track-box">
@@ -122,9 +112,9 @@
                 <div class="container">
                     <div>
                         <div class="col-md-12">
-                            <h1>Put the parts<br>in the right place</h1>
+                            <h1>Get the car ready <br>for the race</h1>
                         </div>
-                        <div class="col-md-8 col-md-push-2">
+                        <div class="col-lg-8 col-lg-push-2 col-md-8 col-md-push-2 col-sm-10 col-xs-12">
                             <div class="car-holder">
                                 <div class="part-slot part-slot-1" data-part="1"></div>
                                 <div class="part-slot part-slot-2" data-part="2"></div>
@@ -132,7 +122,7 @@
                                 <img src="{{asset('game/img/f1_car.png')}}" width="100%">
                             </div>
                         </div>
-                        <div class="col-md-2 col-md-push-2">
+                        <div class="col-lg-2 col-lg-push-2 col-md-2 col-md-push-2 col-sm-2 col-xs-12">
                             <ul class="part-list">
                                 <li>
                                     <div class="part-box" data-part="1"><img src="{{asset('game/img/part1.png')}}"></div>
@@ -159,7 +149,7 @@
                 <div class="container">
                     <div>
                         <div class="col-md-12">
-                            <h1>Select the<br>finish flag</h1>
+                            <h1>Select the <br>finish flag</h1>
                         </div>
                         <div class="col-md-6">
                             <div class="flag-slot" data-id="2">
@@ -207,13 +197,37 @@
             </div>
         </div>
     </div>
+
     <div class="game-view" id="game-4">
+        <div class="game-holder">
+            <div class="game-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1>Jeddah cornish circuit <br>has the most?</h1>
+                        </div>
+                        <div class="col-md-12">
+                          <ul class="answer-list">
+                            <li data-answer="1">Traffic</li>
+                            <li data-answer="2">Corners</li>
+                            <li data-answer="3">Stops</li>
+                          </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="game-view" id="game-5">
         <div class="game-holder">
             <div class="game-content">
                 <div class="container">
                     <div>
                         <div class="col-md-12">
-                            <h1>Who is <br>the winner?</h1>
+                            <h1>Who won the race in Azooz's dream?</h1>
                         </div>
                         <div class="col-md-2">
                             <ul class="winner-list">
@@ -246,47 +260,20 @@
         </div>
     </div>
 
-    <div class="game-view" id="game-5">
-        <div class="game-holder">
-            <div class="game-content">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h1>Prepare the<br>driver for the race</h1>
-                        </div>
-                        <div class="col-md-4 col-md-push-4">
-                            <div class="driver-holder">
-                                <div class="suit-slot suit-slot-1" data-suit="1"></div>
-                                <div class="suit-slot suit-slot-2" data-suit="2"></div>
-                                <div class="suit-slot suit-slot-3" data-suit="3"></div>
-                                <div class="suit-slot suit-slot-4" data-suit="4"></div>
-                                <img src="{{asset('game/img/driver.png')}}" width="100%">
-                            </div>
-                        </div>
-                        <div class="clearfix"></div>
-                        <div class="col-md-6 col-md-push-3">
-                            <ul class="suit-list">
-                                <li>
-                                    <div class="suit-box" data-suit="1"><img src="{{asset('game/img/suit1.png')}}"></div>
-                                </li>
-                                <li>
-                                    <div class="suit-box" data-suit="2"><img src="{{asset('game/img/suit2.png')}}"></div>
-                                </li>
-                                <li>
-                                    <div class="suit-box" data-suit="3"><img src="{{asset('game/img/suit3.png')}}"></div>
-                                </li>
-                                <li>
-                                    <div class="suit-box" data-suit="4"><img src="{{asset('game/img/suit4.png')}}"></div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
 
-                </div>
 
-            </div>
-        </div>
+    <div class="game-footer">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="game-footer-logo">
+                      <img src="{{asset('game/img/logo_otf.svg')}}">
+                  </div>
+              </div>
+          </div>
+      </div>
     </div>
+
     <form action="{{ route('end-game', ['player' => $player->slug]) }}" method="POST" id="formEnd">
         @csrf
         <input type="hidden" class="result" name="result">
