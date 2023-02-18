@@ -731,6 +731,12 @@ z-index: 99;
 } */
 
 @media (max-width: 768px) {
+  .track-box, .flag-box, .part-box, .winner-box {
+      transition: none !important;
+  }
+  .track-box:hover, .flag-box:hover, .part-box:hover, .winner-box:hover {
+      transition: none !important;
+  }
   .track-list li, .flag-list li {
     width: 33.33333%;
     text-align: center;
@@ -747,6 +753,7 @@ z-index: 99;
     height: 50px;
     display: inline-block;
   }
+
 }
 @media (max-width: 600px) {
   h1 {
