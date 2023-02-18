@@ -736,6 +736,7 @@ z-index: 99;
   }
   .track-box:hover, .flag-box:hover, .part-box:hover, .winner-box:hover {
       transition: none !important;
+      box-shadow: none !important;
   }
   .correct-pop {
     background-image: none;
