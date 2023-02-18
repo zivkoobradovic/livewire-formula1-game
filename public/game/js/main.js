@@ -127,7 +127,7 @@ function handleFlagDrop(event, ui) {
 }
 ///GAME WINNER///
 $('.winner-box').draggable( {
-  containment: '#game-4',
+  containment: '#game-5',
   stack: '.winner-box',
   cursor: 'move',
   revert: true
@@ -154,6 +154,8 @@ function handleWinnerDrop(event, ui) {
     if(correctWinner === 2) {
       nextGame();
     }
+  } else {
+      wrongPlay();
   }
 }
 ///GAME DRIVER///

@@ -591,7 +591,8 @@ z-index: 99;
 .winner-list li {
     list-style: none;
     float: left;
-    width: 100%;
+    width: 50%;
+    padding: 10px;
 }
 .winner-list li img {
     list-style: none;
@@ -603,14 +604,14 @@ z-index: 99;
     box-shadow: 4px 4px 15px 0 hsl(0deg 0% 59% / 19%);
     border-radius: 10px;
     padding: 2px;
-  float: left;
-      transition: all .1s ease;
-  text-align: center;
-  cursor: pointer;
+    float: left;
+      transition: all .2s ease;
+    text-align: center;
+    cursor: pointer;
 }
 .winner-box:hover {
     box-shadow: 0px 0px 20px 11px rgb(102 220 132);
-    transition: all .2s ease;
+    transition: all .1s ease;
     z-index: 99;
 }
 .winner-box img {

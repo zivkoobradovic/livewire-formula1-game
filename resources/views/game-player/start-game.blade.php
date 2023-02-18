@@ -229,13 +229,6 @@
                         <div class="col-md-12">
                             <h1>Who won the race in Azooz's dream?</h1>
                         </div>
-                        <div class="col-md-2">
-                            <ul class="winner-list">
-                                <li>
-                                  <div class="winner-box" data-winner="2"><img src="{{asset('game/img/winner1.png')}}"></div>
-                                </li>
-                            </ul>
-                        </div>
 
                         <div class="col-md-8">
                             <div class="winner-holder">
@@ -245,11 +238,15 @@
                             </div>
                         </div>
 
-                        <div class="col-md-2">
+                        <div class="col-md-4">
                             <ul class="winner-list">
                                 <li>
                                   <div class="winner-box" data-winner="1"><img src="{{asset('game/img/winner2.png')}}"></div>
                                 </li>
+                                <li>
+                                  <div class="winner-box" data-winner="2"><img src="{{asset('game/img/winner1.png')}}"></div>
+                                </li>
+
                             </ul>
                         </div>
                     </div>
