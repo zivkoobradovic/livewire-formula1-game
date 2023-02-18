@@ -153,6 +153,7 @@ function handleWinnerDrop(event, ui) {
     });
     ui.draggable.addClass('correct-winner');
     ui.draggable.draggable('option', 'revert', false);
+    correctPlay();
     correctWinner++;
     if(correctWinner === 2) {
       nextGame();

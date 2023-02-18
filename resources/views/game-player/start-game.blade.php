@@ -241,6 +241,8 @@
                         <div class="col-md-12">
                             <h1>Who won the race in Azooz's dream?</h1>
                         </div>
+                        <div class="mob-winner">
+
 
                         <div class="col-md-8">
                             <div class="winner-holder">
@@ -258,8 +260,8 @@
                                 <li>
                                   <div class="winner-box" data-winner="2"><img src="{{asset('game/img/winner1.png')}}"></div>
                                 </li>
-
                             </ul>
+                        </div>
                         </div>
                     </div>
 

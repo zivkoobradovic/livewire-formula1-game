@@ -740,6 +740,9 @@ z-index: 99;
   .correct-pop {
     background-image: none;
   }
+  .game-content {
+    padding-bottom: 40px;
+  }
   .track-list li, .flag-list li {
     width: 33.33333%;
     text-align: center;
@@ -756,7 +759,10 @@ z-index: 99;
     height: 50px;
     display: inline-block;
   }
-
+  .mob-winner {
+    display: flex;
+flex-direction: column-reverse;
+  }
 }
 @media (max-width: 600px) {
   h1 {
@@ -869,7 +875,7 @@ z-index: 99;
   }
   .winner-slot {
     width: 30%;
-    height: 220px;
+    height: 150px;
   }
   .winner-list {
     list-style: none;
@@ -878,14 +884,17 @@ z-index: 99;
     padding-top: 20px;
     width: 100%;
     float: left;
-}
+  }
   .winner-list li {
     list-style: none;
     float: none;
     width: 25%;
     display: inline-block;
     padding: 10px;
-}
+  }
+  .winner-slot-1 {
+      margin-bottom: -30px;
+  }
   .score-content h2 {
     font-size: 19px;
   }
