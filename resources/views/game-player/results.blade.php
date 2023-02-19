@@ -27,14 +27,17 @@
     <div class="game-content">
     <div class="container text-center">
       <div class="score-content">
-        <h1>Your score</h1>
+        <h1>{{ App\Services\Translate::getTranslation()[session('lang')]['score'] }}</h1>
         <h2>{{ $player->email }}</h2>
         <p>{{ $player->result }}</p>
       </div>
     </div>
     <div class="clearfix"></div>
     <div class="container  text-center">
-        {!! $shareComponent !!}
+      <div>{{ App\Services\Translate::getTranslation()[session('lang')]['share'] }} Share</div>
+        <div>
+          {!! $shareComponent !!}
+          </div>
     </div>
     </div>
   </div>

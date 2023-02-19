@@ -14,6 +14,8 @@ class Translate
                 'email' => 'email',
                 'username' => 'user name',
                 'phone' => 'phone (optional)',
+                'avatar' => 'Choose Your Avatar',
+                'code' => 'Enter Your Code',
                 'girl' => 'girl',
                 'boy' => 'boy',
                 'race' => 'Race',
@@ -24,7 +26,7 @@ class Translate
                 'title_3' => 'get the car ready for the race',
 
                 'title_4' => 'select the finish flag',
-                'drag_4' => 'select the finish flag',
+                'drag_4' => 'drag here',
 
                 'title_5' => 'jeddah cornish circuit has the most',
                 'traffic_5' => 'traffic',
@@ -42,6 +44,8 @@ class Translate
                 'email' => 'البريد الإلكتروني ',
                 'username' => 'اسم المستخدم ',
                 'phone' => 'الجوال (اختياري )',
+                'avatar' => '١. اختر الصور الرمزية',
+                'code' => '٢. ادخل رمز التحقق',
                 'girl' => 'بنت',
                 'boy' => 'ولد',
                 'race' => 'تسابق',

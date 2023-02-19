@@ -19,6 +19,7 @@ class GamePlayerController extends Controller
      */
     public function index()
     {
+        empty(session('lang')) ? session(['lang' => 'eng']) : session('lang');
         return view('game-player.index');
     }
 

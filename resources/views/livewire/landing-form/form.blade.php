@@ -1,13 +1,25 @@
 <div class="game-holder">
     <div class="game-content">
         <div class="container">
-
+{{-- choose language --}}
+<div class="flex items-center mb-4">
+    <input id="default-radio-1" type="radio" value="eng" name="" wire:click="changeLanguage" {{$language === 'eng' ? 'checked' : ''}}
+        wire:model="language"
+        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+    <label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">English</label>
+</div>
+<div class="flex items-center">
+    <input id="default-radio-2" type="radio" value="arab" name="" wire:click="changeLanguage" {{$language === 'arab' ? 'checked' : ''}}
+        wire:model="language"
+        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+    <label for="default-radio-2" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Arabian</label>
+</div>
             <!-- Nav tabs -->
             <ul class="nav nav-pills nav-justified" role="tablist">
                 <li role="presentation" class="active"><a href="#login" aria-controls="login" role="tab"
-                        data-toggle="tab">Login</a></li>
+                        data-toggle="tab">{{ $translate[$language]['login'] }}</a></li>
                 <li role="presentation"><a href="#results" aria-controls="results" role="tab"
-                        data-toggle="tab">Leaderboard</a></li>
+                        data-toggle="tab">{{ $translate[$language]['leaderboard'] }}</a></li>
             </ul>
 
             <!-- Tab panes -->
@@ -39,8 +51,8 @@
                                                 </animateTransform>
                                             </g>
                                         </svg></div>
-                                    <label for="email" class="block mb-2 text-sm font-medium text-white">Your
-                                        email</label>
+                                    <label for="email" class="block mb-2 text-sm font-medium text-white">
+                                        {{ $translate[$language]['email'] }}</label>
                                     <input wire:model="email" wire:click="$refresh('email')" class="form-control"
                                         required>
                                     @error('email') <span class="error">{{ $message }}</span> @enderror
@@ -48,8 +60,7 @@
 
                                 @if ($checkingCode)
                                 <div>
-                                    <label for="code" class="block mb-2 text-sm font-medium text-white">Enter Your
-                                        Code</label>
+                                    <label for="code" class="block mb-2 text-sm font-medium text-white">{{ $translate[$language]['code'] }}</label>
                                     <input wire:model="code" class="form-control">
                                     @error('code') <span class="error">{{ $message }}</span> @enderror
                                     {{$codeMessage ? $codeMessage : ''}}
@@ -60,7 +71,7 @@
                                 @if (!$checkingCode)
                                 <div>
                                     <label for="username"
-                                        class="block mb-2 text-sm font-medium text-white">Username</label>
+                                        class="block mb-2 text-sm font-medium text-white">{{ $translate[$language]['username'] }}</label>
                                     <input wire:model="username"
                                     @if ($playerExists && $status === false)
                                     {{'disabled'}}
@@ -70,8 +81,7 @@
                                     @error('username') <span class="error">{{ $message }}</span> @enderror
                                 </div>
                                 <div>
-                                    <label for="phone" class="block mb-2 text-sm font-medium text-white">Your
-                                        Phone (optional)</label>
+                                    <label for="phone" class="block mb-2 text-sm font-medium text-white">{{ $translate[$language]['phone'] }}</label>
                                     <input type="phone" id="phone" name="phone" wire:model="phone"
                                     @if ($playerExists && $status === false)
                                     {{'disabled'}}
@@ -82,8 +92,7 @@
                                     @error('phone') <span class="error">{{ $message }}</span> @enderror
                                 </div>
 
-                                <label class="mb-5 text-lg font-medium text-gray-900 dark:text-white">Choose Your
-                                    Avatar</label>
+                                <label class="mb-5 text-lg font-medium text-gray-900 dark:text-white">{{ $translate[$language]['avatar'] }}</label>
                                 <ul class="grid w-full gap-6 md:grid-cols-2 avatar-select">
                                     <li class="boy">
                                         <input type="radio" id="male" name="avatar" value="male" class="peer"
@@ -95,7 +104,7 @@
                                         <label for="male"
                                             class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 peer-checked:bg-blue-800 dark:hover:bg-blue-400">
                                             <div class="block m-auto">
-                                                <div class="w-full text-lg font-semibold">Boy</div>
+                                                <div class="w-full text-lg font-semibold">{{ $translate[$language]['boy'] }}</div>
                                             </div>
                                         </label>
 
@@ -109,7 +118,7 @@
                                         <label for="female"
                                             class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-pink-300 peer-checked:border-pink-300 peer-checked:text-pink-300 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 peer-checked:bg-pink-800 dark:hover:bg-pink-400">
                                             <div class="block m-auto">
-                                                <div class="w-full text-lg font-semibold">Girl</div>
+                                                <div class="w-full text-lg font-semibold">{{ $translate[$language]['girl'] }}</div>
                                             </div>
                                         </label>
                                     </li>
@@ -128,7 +137,7 @@
                                     <span class="front">
 
                                     {{
-                                    $playerExists ? 'Play Again' : 'Start Game' }}</span></button>
+                                    $playerExists ? 'Play Again' :  $translate[$language]['race'] }}</span></button>
                             </form>
                         </div>
                     </section>

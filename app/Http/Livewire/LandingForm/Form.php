@@ -4,6 +4,7 @@ namespace App\Http\Livewire\LandingForm;
 
 use Livewire\Component;
 use App\Models\GamePlayer;
+use App\Services\Translate;
 use Illuminate\Support\Str;
 
 class Form extends Component
@@ -24,6 +25,9 @@ class Form extends Component
 
     public $topTenPlayers;
 
+    public $translate;
+    public $language;
+
     protected $rules = [
         'username' => 'required|unique:game_players',
         'phone' => 'integer',
@@ -33,6 +37,8 @@ class Form extends Component
     public function mount()
     {
         $this->topTenPlayers =  GamePlayer::orderBy('result', 'asc')->where('status', '=', true)->take(10)->get();
+        $this->translate = Translate::getTranslation();
+        $this->language = session('lang');
     }
 
     public function render()
@@ -105,5 +111,9 @@ class Form extends Component
         } else {
             $this->correctCode = false;
         }
+    }
+
+    public function changeLanguage() {
+        session(['lang' => $this->language]);
     }
 }

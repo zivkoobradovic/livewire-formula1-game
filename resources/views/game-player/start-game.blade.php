@@ -69,11 +69,11 @@
                 <div class="container">
                     <div>
                         <div class="col-md-12">
-                            <h1>Find Jeddah Cornish Circuit</h1>
+                            <h1>{{ App\Services\Translate::getTranslation()[session('lang')]['title_2'] }}</h1>
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <div class="track-slot" data-id="2">
-                                <small>Drag here</small>
+                                <small>{{ App\Services\Translate::getTranslation()[session('lang')]['drag_2'] }}</small>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6">
@@ -124,7 +124,7 @@
                 <div class="container">
                     <div>
                         <div class="col-md-12">
-                            <h1>Get the car ready <br>for the race</h1>
+                            <h1>{{ App\Services\Translate::getTranslation()[session('lang')]['title_3'] }}</h1>
                         </div>
                         <div class="col-lg-8 col-lg-push-2 col-md-8 col-md-push-2 col-sm-10 col-xs-12">
                             <div class="car-holder">
@@ -161,11 +161,11 @@
                 <div class="container">
                     <div>
                         <div class="col-md-12">
-                            <h1>Select the <br>finish flag</h1>
+                            <h1>{{ App\Services\Translate::getTranslation()[session('lang')]['title_4'] }}</h1>
                         </div>
                         <div class="col-md-6">
                             <div class="flag-slot" data-id="2">
-                                <small>Drag here</small>
+                                <small>{{ App\Services\Translate::getTranslation()[session('lang')]['drag_4'] }}</small>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -216,13 +216,13 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1>Jeddah cornish circuit <br>has the most?</h1>
+                            <h1>{{ App\Services\Translate::getTranslation()[session('lang')]['title_5'] }}</h1>
                         </div>
                         <div class="col-md-12">
                           <ul class="answer-list">
-                            <li data-answer="1">Traffic</li>
-                            <li data-answer="2">Corners</li>
-                            <li data-answer="3">Stops</li>
+                            <li data-answer="1">{{ App\Services\Translate::getTranslation()[session('lang')]['traffic_5'] }}</li>
+                            <li data-answer="2">{{ App\Services\Translate::getTranslation()[session('lang')]['corners_5'] }}</li>
+                            <li data-answer="3">{{ App\Services\Translate::getTranslation()[session('lang')]['stops_5'] }}</li>
                           </ul>
                         </div>
                     </div>
@@ -239,7 +239,7 @@
                 <div class="container">
                     <div>
                         <div class="col-md-12">
-                            <h1>Who won the race in Azooz's dream?</h1>
+                            <h1>{{ App\Services\Translate::getTranslation()[session('lang')]['title_6'] }}</h1>
                         </div>
                         <div class="mob-winner">
 

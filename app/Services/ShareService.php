@@ -13,7 +13,6 @@ class ShareService
         )
             ->facebook()
             ->twitter()
-            ->linkedin()
             ->telegram()
             ->whatsapp()
             ->reddit();
