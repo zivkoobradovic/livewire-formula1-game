@@ -13,7 +13,7 @@ class ExportGameplayers implements FromCollection, WithHeadings
      */
     public function collection()
     {
-        return GamePlayer::select("id", "email", "username", "result", "created_at", "code")->get();
+        return GamePlayer::select("id", "email", "username","avatar", "result", "created_at","updated_at", "code")->get();
     }
 
     // public function query()
@@ -23,6 +23,6 @@ class ExportGameplayers implements FromCollection, WithHeadings
 
     public function headings(): array
     {
-        return ['ID', 'Email', 'Username', 'Result', 'Created At', 'Code'];
+        return ['ID', 'Email', 'Username','Gender', 'Result', 'Created At', 'Updated At', 'Code'];
     }
 }

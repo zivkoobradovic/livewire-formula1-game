@@ -42,12 +42,11 @@
                             </th> --}}
                             <th scope="row"
                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                <div class="mb-3">email: {{ $player->email }}</div>
-                                <div class="mb-3">username: {{ $player->username }}</div>
+                                <div class="mb-3">Email: {{ $player->email }}</div>
+                                <div class="mb-3">Username: {{ $player->username }}</div>
+                                <div class="mb-3">Gender: {{ $player->avatar }}</div>
                                 <div class=" w-1/4 mr-auto text-left">Result URL: <a class="font-bold"
-                                        href="{{route('share-url',  $player->slug )}}">{{
-                                        route('share-url', $player->slug)
-                                        }}</a></div>
+                                        href="{{route('share-url',  $player->slug )}}">Click for the result page</a></div>
                             </th>
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 <div>{{ $player->result }}</div>
@@ -100,12 +99,11 @@
                             </th> --}}
                             <th scope="row"
                                 class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                <div class="mb-3">email: {{ $latestPlayer->email }}</div>
-                                <div class="mb-3">username: {{ $latestPlayer->username }}</div>
+                                <div class="mb-3">Email: {{ $latestPlayer->email }}</div>
+                                <div class="mb-3">Username: {{ $latestPlayer->username }}</div>
+                                <div class="mb-3">Gender: {{ $player->avatar }}</div>
                                 <div class=" w-1/4 mr-auto text-left">Result URL: <a class="font-bold"
-                                        href="{{route('share-url', $latestPlayer->slug)}}">{{
-                                        route('share-url', $latestPlayer->slug)
-                                        }}</a></div>
+                                        href="{{route('share-url', $latestPlayer->slug)}}">Click for the result page</a></div>
                             </th>
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 <div>{{ $latestPlayer->result }}</div>
