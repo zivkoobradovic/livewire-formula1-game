@@ -51,7 +51,11 @@
                                                 </animateTransform>
                                             </g>
                                         </svg></div>
-                                    <label for="email" class="block mb-2 text-sm font-medium text-white">
+                                    <label for="email" class="block mb-2 text-sm font-medium text-white"
+                                    @if ($language === 'arab')
+                                        style="width:100%; text-align:right;"
+                                    @endif
+                                    >
                                         {{ $translate[$language]['email'] }}</label>
                                     <input wire:model="email" wire:click="$refresh('email')" class="form-control"
                                         required>
@@ -60,7 +64,10 @@
 
                                 @if ($checkingCode)
                                 <div>
-                                    <label for="code" class="block mb-2 text-sm font-medium text-white">{{ $translate[$language]['code'] }}</label>
+                                    <label for="code" class="block mb-2 text-sm font-medium text-white" @if ($language === 'arab')
+                                        style="width:100%; text-align:right;"
+                                    @endif
+                                    >{{ $translate[$language]['code'] }}</label>
                                     <input wire:model="code" class="form-control">
                                     @error('code') <span class="error">{{ $message }}</span> @enderror
                                     {{$codeMessage ? $codeMessage : ''}}
@@ -71,7 +78,10 @@
                                 @if (!$checkingCode)
                                 <div>
                                     <label for="username"
-                                        class="block mb-2 text-sm font-medium text-white">{{ $translate[$language]['username'] }}</label>
+                                        class="block mb-2 text-sm font-medium text-white" @if ($language === 'arab')
+                                        style="width:100%; text-align:right;"
+                                    @endif
+                                    >{{ $translate[$language]['username'] }}</label>
                                     <input wire:model="username"
                                     @if ($playerExists && $status === false)
                                     {{'disabled'}}
@@ -81,7 +91,10 @@
                                     @error('username') <span class="error">{{ $message }}</span> @enderror
                                 </div>
                                 <div>
-                                    <label for="phone" class="block mb-2 text-sm font-medium text-white">{{ $translate[$language]['phone'] }}</label>
+                                    <label for="phone" class="block mb-2 text-sm font-medium text-white" @if ($language === 'arab')
+                                        style="width:100%; text-align:right;"
+                                    @endif
+                                    >{{ $translate[$language]['phone'] }}</label>
                                     <input type="phone" id="phone" name="phone" wire:model="phone"
                                     @if ($playerExists && $status === false)
                                     {{'disabled'}}
@@ -92,7 +105,10 @@
                                     @error('phone') <span class="error">{{ $message }}</span> @enderror
                                 </div>
 
-                                <label class="mb-5 text-lg font-medium text-gray-900 dark:text-white">{{ $translate[$language]['avatar'] }}</label>
+                                <label class="mb-5 text-lg font-medium text-gray-900 dark:text-white" @if ($language === 'arab')
+                                        style="width:100%; text-align:right;"
+                                    @endif
+                                    >{{ $translate[$language]['avatar'] }}</label>
                                 <ul class="grid w-full gap-6 md:grid-cols-2 avatar-select">
                                     <li class="boy">
                                         <input type="radio" id="male" name="avatar" value="male" class="peer"
