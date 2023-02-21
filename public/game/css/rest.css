@@ -77,6 +77,13 @@ body {
     background-repeat: no-repeat;
 
 }
+.lang-select {
+    width: 50%;
+    float: left;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
 .correct-pop {
   position: fixed;
   width: 100%;
