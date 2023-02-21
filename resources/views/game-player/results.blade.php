@@ -39,7 +39,7 @@
               </div>
 
               <a href="/start-game/{{ $player->slug}}" class="btn btn-lg btn-primary bg-blue-500  hover:bg-blue-300 pushable">
-                <span class="front">Play Again</span>
+                <span class="front">{{App\Services\Translate::getTranslation()[session('lang')]['race_again']}}</span>
               </a>
       </div>
 

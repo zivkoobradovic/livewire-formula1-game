@@ -162,10 +162,8 @@
                                     @endif --}}
                                     class="btn btn-lg btn-primary btn-block {{ $playerExists && $correctCode ? 'bg-green-500 hover:bg-green-300' : 'bg-blue-500  hover:bg-blue-300' }} pushable">
 
-                                    <span class="front">
+                                    <span class="front">{{ $playerExists ? $translate[$language]['race_again'] :  $translate[$language]['race'] }}</span></button>
 
-                                    {{
-                                    $playerExists ? 'Play Again' :  $translate[$language]['race'] }}</span></button>
                             </form>
                         </div>
                     </section>
