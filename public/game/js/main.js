@@ -260,7 +260,7 @@ function nextGame() {
   }
 }
 $(document).ready(function() {
-    $('.loader').delay(1000).slideUp(function() {
+    $('.loader').delay(1000).fadeOut(function() {
       $('.game-time span').stopwatch().stopwatch('start');
     });
 });

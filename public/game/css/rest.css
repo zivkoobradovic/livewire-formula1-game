@@ -43,6 +43,7 @@ body {
   background-position: center center; */
 }
 .loader {
+  display: block;
   position: fixed;
   width: 100%;
   top: 0px;
@@ -123,6 +124,10 @@ body {
 @keyframes opulseBg {
   from { background-size: 300px; }
   to { background-size: 350px; }
+}
+@keyframes opulseBg2 {
+  from { transform: scale(1); }
+  to { transform: scale(1.02); }
 }
 @keyframes opulse {
   from { background-size: 140px; }
@@ -755,6 +760,13 @@ margin-top: 20px;
 } */
 
 @media (max-width: 768px) {
+  .loader {
+    background-image: url(../img/loader-f1.jpg);
+    background-size: cover;
+    z-index: 999;
+    background-position: center center;
+    animation: opulseBg2 0.4s infinite ease-in-out alternate;
+  }
   .track-box, .flag-box, .part-box, .winner-box {
       transition: none !important;
   }
@@ -766,7 +778,8 @@ margin-top: 20px;
     background-image: none;
   }
   .game-content {
-    padding-bottom: 40px;
+      display: block;
+      vertical-align: middle;
   }
   .track-list li, .flag-list li {
     width: 33.33333%;
@@ -828,7 +841,10 @@ flex-direction: column-reverse;
   }
   .game-footer-logo img {
     max-width: 60px;
-  }
+  }.game-holder {
+    display: block;
+    padding-top: 40px;
+}
 
   .nav-justified>li {
     float: left;
@@ -923,7 +939,7 @@ flex-direction: column-reverse;
   }
   .winner-slot {
     width: 25%;
-    height: 150px;
+    height: 130px;
   }
   .winner-list {
     list-style: none;
