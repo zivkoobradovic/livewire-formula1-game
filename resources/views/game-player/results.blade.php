@@ -31,10 +31,10 @@
         <h2>{{ $player->email }}</h2>
         <p>{{ $player->result }}</p>
       </div>
-    </div>
+
     <div class="clearfix"></div>
-    <div class="container  text-center">
-      <div>{{ App\Services\Translate::getTranslation()[session('lang')]['share'] }} Share</div>
+
+      <h1>{{ App\Services\Translate::getTranslation()[session('lang')]['share'] }}</h1>
         <div>
           {!! $shareComponent !!}
           </div>
