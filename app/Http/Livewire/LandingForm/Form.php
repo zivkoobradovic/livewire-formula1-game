@@ -30,7 +30,7 @@ class Form extends Component
 
     protected $rules = [
         'username' => 'required|unique:game_players',
-        'phone' => 'integer',
+        'phone' => 'regex:/^([0-9\s\-\+\(\)]*)$/|min:6',
 
     ];
 
