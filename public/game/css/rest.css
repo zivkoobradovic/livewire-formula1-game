@@ -36,11 +36,12 @@ body, html {
 }
 body {
   font-family: 'Formula1 Display Bold';
-  background-color: #000;
-  /* background-image: url(../img/bg_f1.jpg);
-  background-size: cover;
+  background: rgb(47,47,47);
+  background: linear-gradient(0deg, rgba(47,47,47,1) 0%, rgba(0,0,0,1) 51%, rgba(47,47,47,1) 100%);
+      /* background-image: url(../img/bg_f1.png);
   background-repeat: no-repeat;
-  background-position: center center; */
+  background-size: 700px;
+  background-position: bottom center; */
 }
 .loader {
   display: block;
@@ -75,6 +76,13 @@ body {
     background-position: center right;
     background-repeat: no-repeat;
 
+}
+.lang-select {
+    width: 50%;
+    float: left;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 .correct-pop {
   position: fixed;
@@ -251,9 +259,8 @@ body {
   padding-bottom: 10px;
 }
 .game-footer-logo img {
-  width: 100%;
-  max-width: 130px;
-
+    width: 100%;
+    max-width: 700px;
 }
 .nav-justified {
   margin-bottom: 15px;
@@ -840,7 +847,7 @@ flex-direction: column-reverse;
     font-size: 12px;
   }
   .game-footer-logo img {
-    max-width: 60px;
+    max-width: 340px;
   }.game-holder {
     display: block;
     padding-top: 40px;

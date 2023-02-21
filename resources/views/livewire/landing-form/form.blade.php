@@ -2,13 +2,13 @@
     <div class="game-content">
         <div class="container">
 {{-- choose language --}}
-<div class="flex items-center mb-4">
+<div class="flex items-center lang-select">
     <input id="default-radio-1" type="radio" value="eng" name="" wire:click="changeLanguage" {{$language === 'eng' ? 'checked' : ''}}
         wire:model="language"
         class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
     <label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">English</label>
 </div>
-<div class="flex items-center">
+<div class="flex items-center lang-select">
     <input id="default-radio-2" type="radio" value="arab" name="" wire:click="changeLanguage" {{$language === 'arab' ? 'checked' : ''}}
         wire:model="language"
         class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
@@ -219,7 +219,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="game-footer-logo">
-                  <img src="{{asset('game/img/logo_otf.svg')}}">
+                  <img src="{{asset('game/img/bg_f1.png')}}">
                 </div>
             </div>
         </div>
