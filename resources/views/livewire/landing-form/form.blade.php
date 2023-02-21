@@ -1,6 +1,3 @@
-<!-- <div class="loader-f1">
-
-</div> -->
 <div class="game-holder">
     <div class="game-content">
         <div class="container">
