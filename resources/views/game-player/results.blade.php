@@ -28,7 +28,7 @@
     <div class="container text-center">
       <div class="score-content">
         <h1>{{ App\Services\Translate::getTranslation()[session('lang')]['score'] }}</h1>
-        <h2>{{ $player->email }}</h2>
+        <h2>{{ $player->username }}</h2>
         <p>{{ $player->result }}</p>
       </div>
 

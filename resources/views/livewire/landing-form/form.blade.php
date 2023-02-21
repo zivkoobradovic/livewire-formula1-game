@@ -1,3 +1,6 @@
+<!-- <div class="loader-f1">
+
+</div> -->
 <div class="game-holder">
     <div class="game-content">
         <div class="container">
@@ -16,10 +19,21 @@
 </div>
             <!-- Nav tabs -->
             <ul class="nav nav-pills nav-justified" role="tablist">
-                <li role="presentation" class="active"><a href="#login" aria-controls="login" role="tab"
-                        data-toggle="tab">{{ $translate[$language]['login'] }}</a></li>
-                <li role="presentation"><a href="#results" aria-controls="results" role="tab"
-                        data-toggle="tab">{{ $translate[$language]['leaderboard'] }}</a></li>
+
+              @if($language === 'eng')
+              <li role="presentation" class="active"><a href="#login" aria-controls="login" role="tab"
+                      data-toggle="tab">{{ $translate[$language]['login'] }}</a></li>
+              <li role="presentation"><a href="#results" aria-controls="results" role="tab"
+                      data-toggle="tab">{{ $translate[$language]['leaderboard'] }}</a></li>
+
+              @else
+              <li role="presentation"><a href="#results" aria-controls="results" role="tab"
+                      data-toggle="tab">{{ $translate[$language]['leaderboard'] }}</a></li>
+
+              <li role="presentation" class="active"><a href="#login" aria-controls="login" role="tab"
+                      data-toggle="tab">{{ $translate[$language]['login'] }}</a></li>
+
+              @endif
             </ul>
 
             <!-- Tab panes -->

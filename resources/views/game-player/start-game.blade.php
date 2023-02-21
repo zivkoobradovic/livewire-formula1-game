@@ -33,7 +33,7 @@
             <div class="row">
                 <div class="col-md-4 col-xs-4">
                     <div class="game-status">
-                        <h5>Game <span>1</span> of 5</h5>
+                        <h5><span>1</span> / 5</h5>
                     </div>
                 </div>
                 <div class="col-md-4 col-xs-4">
