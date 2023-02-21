@@ -19,6 +19,7 @@ class Translate
                 'girl' => 'girl',
                 'boy' => 'boy',
                 'race' => 'Race',
+                'race_again' => 'Race Again',
 
                 'title_2' => 'Find Jeddah Cornish Circuit',
                 'drag_2' => 'drag here',
@@ -49,6 +50,7 @@ class Translate
                 'girl' => 'بنت',
                 'boy' => 'ولد ',
                 'race' => 'تسابق ',
+                'race_again' => 'تسابق مرة اخرى',
 
                 'title_2' => 'أوجد حلبة كورنيش جدة',
                 'drag_2' => 'اسحب هنا ',
