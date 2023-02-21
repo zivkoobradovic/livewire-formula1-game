@@ -103,15 +103,15 @@ class Form extends Component
         }
     }
 
-    public function updatedCode($code)
-    {
-        $this->validateOnly('code', ['code' => 'required']);
-        if ($this->player->code === $code) {
-            $this->correctCode = true;
-        } else {
-            $this->correctCode = false;
-        }
-    }
+    // public function updatedCode($code)
+    // {
+    //     $this->validateOnly('code', ['code' => 'required']);
+    //     if ($this->player->code === $code) {
+    //         $this->correctCode = true;
+    //     } else {
+    //         $this->correctCode = false;
+    //     }
+    // }
 
     public function changeLanguage() {
         session(['lang' => $this->language]);

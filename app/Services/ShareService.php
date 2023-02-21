@@ -9,7 +9,7 @@ class ShareService
     {
         return \Share::page(
             route('share-url', $player->slug),
-            'Your share text comes here',
+            'Check My Result!',
         )
             ->facebook()
             ->twitter()

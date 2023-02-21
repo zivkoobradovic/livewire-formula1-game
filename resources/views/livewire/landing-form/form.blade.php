@@ -74,7 +74,7 @@
                                 </div>
 
                                 @if ($checkingCode)
-                                <div>
+                                {{-- <div>
                                     <label for="code" class="block mb-2 text-sm font-medium text-white" @if ($language === 'arab')
                                         style="width:100%; text-align:right;"
                                     @endif
@@ -82,7 +82,7 @@
                                     <input wire:model="code" class="form-control">
                                     @error('code') <span class="error">{{ $message }}</span> @enderror
                                     {{$codeMessage ? $codeMessage : ''}}
-                                </div>
+                                </div> --}}
                                 @endif
 
 
@@ -152,13 +152,14 @@
                                 </ul>
                                 @endif
 
-                                <button wire:click="{{ $playerExists ? 'playAgain' : 'startNewGame' }}" @if ($playerExists && $status === false)
+                                <button wire:click="{{ $playerExists ? 'playAgain' : 'startNewGame' }}"
+                                {{-- @if ($playerExists && $status === false)
                                     {{''}}
                                     @elseif ($playerExists && !$correctCode)
                                     {{'hidden disabled'}}
                                     @elseif (!$playerExists)
                                     {{''}}
-                                    @endif
+                                    @endif --}}
                                     class="btn btn-lg btn-primary btn-block {{ $playerExists && $correctCode ? 'bg-green-500 hover:bg-green-300' : 'bg-blue-500  hover:bg-blue-300' }} pushable">
 
                                     <span class="front">

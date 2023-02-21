@@ -49,7 +49,7 @@ class GamePlayerController extends Controller
         $player->status = true;
         $player->save();
 
-        SendCodeMailToThePlayer::send($player);
+        // SendCodeMailToThePlayer::send($player);
 
         return view('game-player.results', ['player' => $player, 'shareComponent' => ShareService::share($player)]);
     }
