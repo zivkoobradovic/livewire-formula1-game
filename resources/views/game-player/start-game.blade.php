@@ -56,7 +56,7 @@
           <div class="row">
               <div class="col-md-12">
                   <div class="game-footer-logo">
-                      <img src="{{asset('game/img/logo_otf.svg')}}">
+                      <img src="{{asset('game/img/bg_f1.png')}}">
                   </div>
               </div>
           </div>
