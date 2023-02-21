@@ -43,6 +43,7 @@ body {
   background-position: center center; */
 }
 .loader {
+  display: block;
   position: fixed;
   width: 100%;
   top: 0px;
@@ -124,6 +125,10 @@ body {
   from { background-size: 300px; }
   to { background-size: 350px; }
 }
+@keyframes opulseBg2 {
+  from { transform: scale(1); }
+  to { transform: scale(1.02); }
+}
 @keyframes opulse {
   from { background-size: 140px; }
   to { background-size: 160px; }
@@ -185,6 +190,11 @@ body {
   .btn-primary:hover {
       background-color: #c00634;
   }
+  .btn-primary.active, .btn-primary:active {
+    color: #fff;
+    background-color: #902828 !important;
+    border-color: #742020 !important;
+}
 .game-logo {
   text-align: center;
   padding-top: 0px;
@@ -678,6 +688,9 @@ z-index: 99;
 .score-content p {
     font-size: 70px;
 }
+.score-content .pushable {
+margin-top: 20px;
+}
 #social-links ul {
   padding: 0px;
 }
@@ -747,6 +760,13 @@ z-index: 99;
 } */
 
 @media (max-width: 768px) {
+  .loader {
+    background-image: url(../img/loader-f1.jpg);
+    background-size: cover;
+    z-index: 999;
+    background-position: center center;
+    animation: opulseBg2 0.4s infinite ease-in-out alternate;
+  }
   .track-box, .flag-box, .part-box, .winner-box {
       transition: none !important;
   }
@@ -758,7 +778,8 @@ z-index: 99;
     background-image: none;
   }
   .game-content {
-    padding-bottom: 40px;
+      display: block;
+      vertical-align: middle;
   }
   .track-list li, .flag-list li {
     width: 33.33333%;
@@ -780,6 +801,29 @@ z-index: 99;
     display: flex;
 flex-direction: column-reverse;
   }
+  .winner-slot {
+    width: 140px;
+    height: 190px;
+}
+.winner-list {
+    list-style: none;
+    padding: 0px;
+    padding-top: 0px;
+    text-align: center;
+}
+.winner-list li img {
+    list-style: none;
+    float: none;
+    width: 100%;
+    max-width: 100px;
+}
+.winner-list li {
+    float: none;
+    width: 130px;
+    padding: 10px;
+    display: inline-block;
+    text-align: center;
+}
 }
 @media (max-width: 600px) {
   h1 {
@@ -797,7 +841,10 @@ flex-direction: column-reverse;
   }
   .game-footer-logo img {
     max-width: 60px;
-  }
+  }.game-holder {
+    display: block;
+    padding-top: 40px;
+}
 
   .nav-justified>li {
     float: left;
@@ -891,14 +938,14 @@ flex-direction: column-reverse;
     line-height: 60px;
   }
   .winner-slot {
-    width: 30%;
-    height: 150px;
+    width: 25%;
+    height: 130px;
   }
   .winner-list {
     list-style: none;
     padding: 0px;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 0px;
     width: 100%;
     float: left;
   }
@@ -917,7 +964,9 @@ flex-direction: column-reverse;
   }
   .score-content p {
       font-size: 40px;
+      color: #fff;
   }
+
   #social-links ul li a {
     padding: 10px;
     border-radius: 10px;
