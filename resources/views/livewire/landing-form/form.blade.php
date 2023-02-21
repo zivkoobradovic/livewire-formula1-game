@@ -165,7 +165,7 @@
                                     <span class="front">
 
                                     {{
-                                    $playerExists ? $translate[$language]['race_again'] :  $translate[$language]['race'] }}</span></button>
+                                    $playerExists ? 'Play Again' :  $translate[$language]['race'] }}</span></button>
                             </form>
                         </div>
                     </section>

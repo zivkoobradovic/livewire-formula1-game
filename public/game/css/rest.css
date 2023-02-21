@@ -847,7 +847,7 @@ flex-direction: column-reverse;
     font-size: 12px;
   }
   .game-footer-logo img {
-    max-width: 340px;
+    max-width: 300px;
   }.game-holder {
     display: block;
     padding-top: 40px;
