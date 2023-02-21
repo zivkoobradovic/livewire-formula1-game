@@ -36,10 +36,11 @@ body, html {
 }
 body {
   font-family: 'Formula1 Display Bold';
-  background-image: url(../img/bg_f1.jpg);
+  background-color: #000;
+  /* background-image: url(../img/bg_f1.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center center; */
 }
 .loader {
   position: fixed;
