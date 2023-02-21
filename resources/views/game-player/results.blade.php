@@ -27,17 +27,24 @@
     <div class="game-content">
     <div class="container text-center">
       <div class="score-content">
-        <h1>{{ App\Services\Translate::getTranslation()[session('lang')]['score'] }}</h1>
-        <h2>{{ $player->username }}</h2>
+        <h1>{{ $player->username }}</h1>
+        <h2>{{ App\Services\Translate::getTranslation()[session('lang')]['score'] }}</h2>
+
         <p>{{ $player->result }}</p>
+        <div class="clearfix"></div>
+
+          <small>{{ App\Services\Translate::getTranslation()[session('lang')]['share'] }}</small>
+            <div>
+              {!! $shareComponent !!}
+              </div>
+
+              <a href="/start-game/{{ $player->slug}}" class="btn btn-lg btn-primary bg-blue-500  hover:bg-blue-300 pushable">
+                <span class="front">Play Again</span>
+              </a>
       </div>
 
-    <div class="clearfix"></div>
 
-      <h1>{{ App\Services\Translate::getTranslation()[session('lang')]['share'] }}</h1>
-        <div>
-          {!! $shareComponent !!}
-          </div>
+
     </div>
     </div>
   </div>

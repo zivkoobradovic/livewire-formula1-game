@@ -129,6 +129,17 @@ function handleFlagDrop(event, ui) {
   }
 }
 ///GAME WINNER///
+var winnerHolder = $('.winner-list'),
+    winnerList = winnerHolder.find('li').detach(),
+    usedWinnerList = [],
+    newWinnerList = [];
+    while (true) {
+      var liWinner = winnerList[Math.floor(Math.random() * winnerList.length)];
+      if (usedWinnerList.indexOf(liWinner) === -1 && newWinnerList.indexOf(liWinner) === -1) newWinnerList.push(liWinner);
+      if (newWinnerList.length >= 2) break;
+    }
+    usedWinnerList = newWinnerList;
+    winnerHolder.html(newWinnerList);
 $('.winner-box').draggable( {
   containment: '#game-5',
   stack: '.winner-box',
@@ -149,7 +160,7 @@ function handleWinnerDrop(event, ui) {
   if (slotWinner === boxWinner) {
     ui.draggable.draggable('disable');
     ui.draggable.position({
-      of: $(this), my: 'center center', at: 'center center'
+      of: $(this), my: 'top left', at: 'top left'
     });
     ui.draggable.addClass('correct-winner');
     ui.draggable.draggable('option', 'revert', false);

@@ -185,6 +185,11 @@ body {
   .btn-primary:hover {
       background-color: #c00634;
   }
+  .btn-primary.active, .btn-primary:active {
+    color: #fff;
+    background-color: #902828 !important;
+    border-color: #742020 !important;
+}
 .game-logo {
   text-align: center;
   padding-top: 0px;
@@ -678,6 +683,9 @@ z-index: 99;
 .score-content p {
     font-size: 70px;
 }
+.score-content .pushable {
+margin-top: 20px;
+}
 #social-links ul {
   padding: 0px;
 }
@@ -940,7 +948,9 @@ flex-direction: column-reverse;
   }
   .score-content p {
       font-size: 40px;
+      color: #fff;
   }
+
   #social-links ul li a {
     padding: 10px;
     border-radius: 10px;
