@@ -14,6 +14,7 @@
     <link href="{{asset('game/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('game/css/rest.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -27,17 +28,24 @@
     <div class="game-content">
     <div class="container text-center">
       <div class="score-content">
+        <div id="html-content-holder">
+
         <h1>{{ $player->username }}</h1>
         <h2>{{ App\Services\Translate::getTranslation()[session('lang')]['score'] }}</h2>
 
         <p>{{ $player->result }}</p>
-        <div class="clearfix"></div>
+        <img src="{{asset('game/img/bg_f1.png')}}">
 
+        </div>
+        <div class="clearfix"></div>
+            <br>
           <small>{{ App\Services\Translate::getTranslation()[session('lang')]['share'] }}</small>
             <div>
               {!! $shareComponent !!}
               </div>
-
+              <small>...or take a screenshot and share it on<br>Instagram / TikTok / Snapchat</small>
+              <div class="clearfix">
+              </div>
               <a href="/start-game/{{ $player->slug}}" class="btn btn-lg btn-primary bg-blue-500  hover:bg-blue-300 pushable">
                 <span class="front">{{App\Services\Translate::getTranslation()[session('lang')]['race_again']}}</span>
               </a>
@@ -46,8 +54,25 @@
 
 
     </div>
+    <div class="" id="previewImg">
+
+    </div>
     </div>
   </div>
 </body>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
+<script>
+html2canvas(document.getElementById("html-content-holder"), {
+            allowTaint: true, useCORS: true
+        }).then(function (canvas) {
+            var anchorTag = document.createElement("a");
+            document.body.appendChild(anchorTag);
+            anchorTag.download = "filename.jpg";
+            anchorTag.href = canvas.toDataURL();
+            anchorTag.target = '_blank';
+            anchorTag.click();
+        });
+</script>
 </html>
