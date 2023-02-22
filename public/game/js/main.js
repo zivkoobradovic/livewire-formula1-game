@@ -223,7 +223,7 @@ $('.answer-list li').click(function() {
   }
 });
 
-$('.text-anime').click(function() {
+$('#soundFix').click(function() {
   $('#correct-audio').get(0).play();
   $('#wrong-audio').get(0).play();
 
@@ -262,6 +262,9 @@ function nextGame() {
 $(document).ready(function() {
     $('.loader').delay(1000).fadeOut(function() {
       $('.game-time span').stopwatch().stopwatch('start');
-      $('.text-anime').trigger('click');
     });
+    document.body.addEventListener("mousemove", function () {
+      wrongPlay();
+      correctPlay();
+    })
 });

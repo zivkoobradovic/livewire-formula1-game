@@ -63,6 +63,7 @@ body {
   background-color: rgb(38 38 38 / 47%);
   animation: opulseBg 0.6s infinite ease-in-out alternate;
 }
+
 .loader-f1 {
     position: fixed;
     width: 100%;

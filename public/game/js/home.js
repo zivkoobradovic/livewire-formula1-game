@@ -4,9 +4,3 @@ $(document).ready(function() {
 
     });
 });
-
-$('.pushable').click(function() {
-    $('#correct-audio').get(0).play();
-    $('#wrong-audio').get(0).play();
-
-});

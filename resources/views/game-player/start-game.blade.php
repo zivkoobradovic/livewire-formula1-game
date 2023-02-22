@@ -20,10 +20,10 @@
 </head>
 
 <body>
-  <audio id="correct-audio" src="{{asset('game/sounds/collect-5931.mp3')}}"></audio>
-  <audio id="wrong-audio" src="{{asset('game/sounds/wrong-47984.mp3')}}"></audio>
+    <audio id="correct-audio" src="{{asset('game/sounds/collect-5931.mp3')}}"></audio>
+    <audio id="wrong-audio" src="{{asset('game/sounds/wrong-47984.mp3')}}"></audio>
 
-
+    <div id="soundFix"></div>
     <div class="loader"></div>
     <div class="correct-pop">
       <div class="correct-pop-content"></div>
