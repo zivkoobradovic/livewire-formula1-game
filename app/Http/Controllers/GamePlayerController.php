@@ -31,6 +31,7 @@ class GamePlayerController extends Controller
      */
     public function show(GamePlayer $player)
     {
+        empty(session('lang')) ? session(['lang' => 'eng']) : session('lang');
         return view('game-player.results', ['player' => $player, 'shareComponent' => ShareService::share($player)]);
     }
 
