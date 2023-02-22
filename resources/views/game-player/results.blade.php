@@ -12,7 +12,7 @@
 
     <!-- Bootstrap -->
     <link href="{{asset('game/css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{asset('game/css/rest.css')}}" rel="stylesheet">
+    <link href="{{asset('game/css/rest.css?v2')}}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -46,6 +46,10 @@
               <small>...or take a screenshot and share it on<br>Instagram / TikTok / Snapchat</small>
               <div class="clearfix">
               </div>
+              <button class="btn btn-sm btn-primary take-screenshot">take a screenshot</button>
+              <div class="clearfix">
+              </div>
+              <hr>
               <a href="/start-game/{{ $player->slug}}" class="btn btn-lg btn-primary bg-blue-500  hover:bg-blue-300 pushable">
                 <span class="front">{{App\Services\Translate::getTranslation()[session('lang')]['race_again']}}</span>
               </a>
@@ -64,15 +68,18 @@
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
 <script>
-html2canvas(document.getElementById("html-content-holder"), {
-            allowTaint: true, useCORS: true
-        }).then(function (canvas) {
-            var anchorTag = document.createElement("a");
-            document.body.appendChild(anchorTag);
-            anchorTag.download = "filename.jpg";
-            anchorTag.href = canvas.toDataURL();
-            anchorTag.target = '_blank';
-            anchorTag.click();
-        });
+$('.take-screenshot').click(function(){
+  html2canvas(document.getElementById("html-content-holder"), {
+        allowTaint: true, useCORS: true
+    }).then(function (canvas) {
+        var anchorTag = document.createElement("a");
+        document.body.appendChild(anchorTag);
+        anchorTag.download = "filename.jpg";
+        anchorTag.href = canvas.toDataURL();
+        anchorTag.target = '_blank';
+        anchorTag.click();
+    });
+
+});
 </script>
 </html>
