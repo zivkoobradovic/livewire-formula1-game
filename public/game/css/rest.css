@@ -287,8 +287,8 @@ body {
 }
 .tab-content {
   padding: 40px;
-  -webkit-backdrop-filter: saturate(180%) blur(26px);
-  backdrop-filter: saturate(180%) blur(26px);
+  /* -webkit-backdrop-filter: saturate(180%) blur(26px);
+  backdrop-filter: saturate(180%) blur(26px); */
   background-color: hsl(0deg 0% 15% / 74%);
   background-color: rgb(38 38 38 / 47%);
   border-radius: 10px;
