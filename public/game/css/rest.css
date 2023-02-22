@@ -820,6 +820,8 @@ margin-top: 20px;
   .game-content {
       display: block;
       vertical-align: middle;
+      position: fixed;
+      width: 100%;
   }
   .track-list li, .flag-list li {
     width: 33.33333%;

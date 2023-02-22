@@ -230,9 +230,11 @@ $('#soundFix').click(function() {
   // nextGame();
 });
 function wrongPlay() {
+  $("#wrong-audio").get(0).muted = false;
   $('#wrong-audio').get(0).play();
 }
 function correctPlay() {
+  $("#correct-audio").get(0).muted = false;
   $('#correct-audio').get(0).play();
 }
 function nextGame() {
@@ -266,8 +268,11 @@ $(document).ready(function() {
     var audioInit = 0;
     document.body.addEventListener("mousemove", function () {
       if(audioInit == 0) {
-        wrongPlay();
-        correctPlay();
+
+        $("#correct-audio").get(0).muted = true;
+        $("#correct-audio").get(0).play();
+        $("#wrong-audio").get(0).muted = true;
+        $("#wrong-audio").get(0).play();
         audioInit = 1;
       }
     })
