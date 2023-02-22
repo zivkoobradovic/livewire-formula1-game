@@ -807,9 +807,6 @@ margin-top: 20px;
       transition: none !important;
       box-shadow: none !important;
   }
-  .correct-pop {
-    background-image: none;
-  }
   .game-content {
       display: block;
       vertical-align: middle;
