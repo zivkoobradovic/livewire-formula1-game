@@ -263,8 +263,13 @@ $(document).ready(function() {
     $('.loader').delay(1000).fadeOut(function() {
       $('.game-time span').stopwatch().stopwatch('start');
     });
+    var audioInit = 0;
     document.body.addEventListener("mousemove", function () {
-      wrongPlay();
-      correctPlay();
+      if(audioInit == 0) {
+        wrongPlay();
+        correctPlay();
+        audioInit = 1;
+      }
     })
+
 });
