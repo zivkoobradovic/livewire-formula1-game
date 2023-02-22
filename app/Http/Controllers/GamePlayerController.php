@@ -44,7 +44,7 @@ class GamePlayerController extends Controller
 
     public function endGame(GamePlayer $player)
     {
-
+        session(['game_end' => true]);
         $player->result = request('result');
         !$player->code ? $player->code = Str::random(8) : $player->code;
         $player->status = true;

@@ -54,9 +54,12 @@
               <div class="clearfix">
               </div>
               <hr>
-              <a href="/start-game/{{ $player->slug}}" class="btn btn-lg btn-primary bg-blue-500  hover:bg-blue-300 pushable">
-                <span class="front">{{App\Services\Translate::getTranslation()[session('lang')]['race_again']}}</span>
-              </a>
+              @if (session('game_end') === true)
+                  <a href="/start-game/{{ $player->slug}}" class="btn btn-lg btn-primary bg-blue-500  hover:bg-blue-300 pushable">
+                    <span class="front">{{App\Services\Translate::getTranslation()[session('lang')]['race_again']}}</span>
+                  </a>
+              @endif
+
       </div>
 
 
