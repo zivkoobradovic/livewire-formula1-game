@@ -257,7 +257,7 @@ body {
   width: 100%;
   left: 0px;
   text-align: center;
-  padding-bottom: 10px;
+  padding-bottom: 0px;
       z-index: -1;
 }
 .game-footer-logo img {
