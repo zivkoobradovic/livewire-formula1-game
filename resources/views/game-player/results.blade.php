@@ -76,7 +76,6 @@ $('.take-screenshot').click(function(){
         document.body.appendChild(anchorTag);
         anchorTag.download = "filename.jpg";
         anchorTag.href = canvas.toDataURL();
-        anchorTag.target = '_blank';
         anchorTag.click();
     });
 

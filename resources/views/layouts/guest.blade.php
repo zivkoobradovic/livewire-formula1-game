@@ -24,6 +24,8 @@
 </head>
 
 <body>
+  <audio id="correct-audio" src="{{asset('game/sounds/collect-5931.mp3')}}" muted></audio>
+  <audio id="wrong-audio" src="{{asset('game/sounds/wrong-47984.mp3')}}" muted></audio>
 
   <div class="loader">
 
@@ -40,6 +42,6 @@
 </script>
 <script src="{{asset('game/js/jquery.stopwatch.js')}}"></script>
 <script src="{{asset('game/js/bootstrap.min.js')}}"></script>
-<script src="{{asset('game/js/main.min.js')}}"></script>
+<script src="{{asset('game/js/home.js')}}"></script>
 
 </html>

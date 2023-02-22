@@ -696,8 +696,8 @@ z-index: 99;
     font-size: 30px;
 }
 .score-content hr {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     border: 0;
     border-top: 1px solid #ffffff17;
 }
@@ -721,8 +721,8 @@ margin-top: 20px;
     border-color: #08c64c;
     border-radius: 10px;
     line-height: 30px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 #social-links ul {
   padding: 0px;
@@ -730,8 +730,8 @@ margin-top: 20px;
 #social-links {
     margin: 0 auto;
     max-width: 500px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 #social-links ul li {
