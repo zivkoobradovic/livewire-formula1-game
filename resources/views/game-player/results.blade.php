@@ -28,15 +28,19 @@
     <div class="game-content">
     <div class="container text-center">
       <div class="score-content">
-        <div id="html-content-holder">
+        <div class="screenshot-holder">
 
+        <div id="html-content-holder">
+        <img src="{{asset('game/img/logo.png')}}">
         <h1>{{ $player->username }}</h1>
         <h2>{{ App\Services\Translate::getTranslation()[session('lang')]['score'] }}</h2>
 
         <p>{{ $player->result }}</p>
-        <img src="{{asset('game/img/bg_f1.png')}}">
+
 
         </div>
+        </div>
+
         <div class="clearfix"></div>
             <br>
           <small>{{ App\Services\Translate::getTranslation()[session('lang')]['share'] }}</small>

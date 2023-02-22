@@ -237,7 +237,7 @@ function correctPlay() {
 }
 function nextGame() {
   if(game < 5) {
-    $('.text-anime').trigger('click');
+    correctPlay();
     $('#game-'+game).fadeOut();
     game++;
     $('.correct-pop').fadeIn(function(){

@@ -1,3 +1,4 @@
+
 <div class="game-holder">
     <div class="game-content">
         <div class="container">
@@ -195,20 +196,6 @@
 
         </div>
 
-    </div>
-
-</div>
-<div class="game-bar">
-    <div class="container">
-        <div class="row">
-
-            <div class="col-md-12 col-xs-12">
-                <div class="game-logo text-anime">
-                    <img src="{{asset('game/img/logo.svg')}}" alt="">
-                </div>
-            </div>
-
-        </div>
     </div>
 
 </div>
