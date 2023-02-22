@@ -1,8 +1,6 @@
 var game = 1;
 ///GAME TRACK///
-$('.track-list').click(function() {
-    $('#correct-audio').get(0).play();
-});
+
 
 var trackHolder = $('.track-list'),
     trackList = trackHolder.find('li').detach(),
@@ -226,8 +224,10 @@ $('.answer-list li').click(function() {
 });
 
 $('.text-anime').click(function() {
+  $('#correct-audio').get(0).play();
+  $('#wrong-audio').get(0).play();
+
   // nextGame();
-    $('#correct-audio').get(0).play();
 });
 function wrongPlay() {
   $('#wrong-audio').get(0).play();
@@ -262,5 +262,6 @@ function nextGame() {
 $(document).ready(function() {
     $('.loader').delay(1000).fadeOut(function() {
       $('.game-time span').stopwatch().stopwatch('start');
+      $('.text-anime').trigger('click');
     });
 });
