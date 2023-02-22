@@ -82,7 +82,7 @@ body {
     width: 50%;
     float: left;
     text-align: center;
-    padding-top: 15px;
+    /* padding-top: 15px; */
     padding-bottom: 15px;
 }
 .correct-pop {
@@ -265,8 +265,8 @@ body {
     max-width: 700px;
 }
 .nav-justified {
-  margin-bottom: 15px;
-      margin-top: 15px;
+    /* margin-bottom: 15px; */
+    margin-top: 15px;
 }
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
   color: #fff;
@@ -286,13 +286,11 @@ body {
   border-radius: 10px;
 }
 .tab-content {
-  padding: 40px;
-  /* -webkit-backdrop-filter: saturate(180%) blur(26px);
-  backdrop-filter: saturate(180%) blur(26px); */
-  background-color: hsl(0deg 0% 15% / 74%);
-  background-color: rgb(38 38 38 / 47%);
-  border-radius: 10px;
-  color: #fff;
+    padding: 15px;
+    /* background-color: hsl(0deg 0% 15% / 74%); */
+    /* background-color: rgb(38 38 38 / 47%); */
+    /* border-radius: 10px; */
+    color: #fff;
 }
 .tab-content .btn-primary {
   border-width: 2px;
