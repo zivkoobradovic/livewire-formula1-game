@@ -300,12 +300,12 @@ body {
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
   color: #fff;
   background-color: #00e32d;
-  transition: all .2s ease;
+  /* transition: all .2s ease; */
 }
 .nav>li>a:focus, .nav>li>a:hover {
   text-decoration: none;
   background-color: #00e32d;
-  transition: all .2s ease;
+  /* transition: all .2s ease; */
 }
 .nav-justified>li>a {
   margin-bottom: 0;
@@ -420,14 +420,14 @@ h1 {
 .wrong {
       border-style: solid !important;
     border-color: #de0000 !important;
-      transition: all .2s ease;
+      /* transition: all .2s ease; */
 }
 .correct {
   scale: 2;
   box-shadow: none;
       border-style: solid !important;
     border-color: #03cb00 !important;
-      transition: all .2s ease;
+      /* transition: all .2s ease; */
 }
 #game-1 {
   display: block;
@@ -438,7 +438,7 @@ h1 {
     border-radius: 10px;
     padding: 50px;
     height: 500px;
-    transition: all .2s ease;
+    /* transition: all .2s ease; */
     text-align: center;
     vertical-align: middle;
     border-radius: 10px;
@@ -472,12 +472,12 @@ h1 {
   height: 160px;
   text-align: center;
   cursor: pointer;
-  transition: all .1s ease;
+  /* transition: all .1s ease; */
 
 }
 .track-box:hover, .flag-box:hover {
     box-shadow: 0px 0px 20px 11px rgb(102 220 132);
-    transition: all .2s ease;
+    /* transition: all .2s ease; */
     z-index: 99;
 }
 .track-box img, .flag-box img {
@@ -541,12 +541,12 @@ h1 {
   box-shadow: 4px 4px 15px 0 hsl(0deg 0% 59% / 19%);
   border-radius: 10px;
   padding: 2px;
-  transition: all .1s ease;
+  /* transition: all .1s ease; */
   cursor: pointer;
 }
 .part-box:hover {
 box-shadow: 0px 0px 20px 11px rgb(102 220 132);
-transition: all .2s ease;
+/* transition: all .2s ease; */
 z-index: 99;
 }
 .part-box img {
@@ -556,7 +556,7 @@ z-index: 99;
 .correct-part {
   scale: 1.2;
   box-shadow: none;
-  transition: all .2s ease;
+  /* transition: all .2s ease; */
 }
 
 .driver-holder {
@@ -623,7 +623,7 @@ z-index: 99;
 .correct-suit {
   scale: 1.2;
   box-shadow: none;
-  transition: all .2s ease;
+  /* transition: all .2s ease; */
 }
 /**/
 .winner-holder {
@@ -667,13 +667,13 @@ z-index: 99;
     border-radius: 10px;
     padding: 2px;
     float: left;
-      transition: all .2s ease;
+      /* transition: all .2s ease; */
     text-align: center;
     cursor: pointer;
 }
 .winner-box:hover {
     box-shadow: 0px 0px 20px 11px rgb(102 220 132);
-    transition: all .1s ease;
+    /* transition: all .1s ease; */
     z-index: 99;
 }
 .winner-box img {
@@ -705,7 +705,7 @@ z-index: 99;
 }
 
 .hovered {
-  transition: all .2s ease;
+  /* transition: all .2s ease; */
   box-shadow: 4px 4px 15px 0 hsl(0deg 0% 59% / 19%);
   transform: scale(1.1, 1.1);
 }
@@ -1016,7 +1016,7 @@ flex-direction: column-reverse;
   .correct-suit {
     scale: 1.2;
     box-shadow: none;
-    transition: all .2s ease;
+    /* transition: all .2s ease; */
   }
   .answer-list li {
     font-size: 16px;
