@@ -1080,7 +1080,7 @@ flex-direction: column-reverse;
 }
 
 }
-@media (max-height: 650px) {
+@media (max-height: 550px) {
 
   .game-bar {
     padding-top: 0px;
