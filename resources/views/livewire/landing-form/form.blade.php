@@ -67,7 +67,7 @@
                                     <label for="email" class="block mb-2 text-sm font-medium text-white"
                                         @if($language==='arab' ) style="width:100%; text-align:right;" @endif>
                                         {{ $translate[$language]['email'] }}</label>
-                                    <input wire:model="email" wire:click="$refresh('email')" class="form-control"
+                                    <input wire:model="email" wire:click="$refresh('email')" class="form-control email-input"
                                         required value="{{old('email')}}">
                                     @error('email') <span class="error">{{ $message }}</span> @enderror
                                 </div>
