@@ -52,17 +52,6 @@
         </div>
 
     </div>
-    <div class="game-footer">
-      <div class="container">
-          <div class="row">
-              <div class="col-md-12">
-                  <div class="game-footer-logo">
-                      <img src="{{asset('game/img/bg_f1.png')}}">
-                  </div>
-              </div>
-          </div>
-      </div>
-    </div>
 
     <div class="game-view" id="game-1">
         <div class="game-holder">
@@ -272,6 +261,17 @@
         </div>
     </div>
 
+    <div class="game-footer">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="game-footer-logo">
+                      <img src="{{asset('game/img/bg_f1.png')}}">
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
 
 
 

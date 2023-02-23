@@ -828,7 +828,7 @@ margin-top: 20px;
   .game-content {
       display: block;
       vertical-align: middle;
-      position: fixed;
+      position: relative;
       width: 100%;
   }
 
@@ -1034,8 +1034,16 @@ flex-direction: column-reverse;
     font-size: 18px;
   }
 }
-@media (orientation: landscape) {
-  body {
-    height: 1000px;
+@media (max-height: 850px) {
+  .game-bar {
+    position: relative;
   }
+  .game-holder {
+    height: auto;
+    display: block;
+  }
+  body, html {
+    overflow: scroll;
+    padding-bottom: 150px;
+}
 }
