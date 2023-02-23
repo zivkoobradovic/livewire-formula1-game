@@ -30,7 +30,7 @@ class Form extends Component
 
     protected $rules = [
         'email' => 'required|email:rfc,dns|lowercase',
-        'username' => 'required|unique:game_players',
+        'username' => 'required|unique:game_players|max:10',
         'phone' => 'regex:/^([0-9\s\-\+\(\)]*)$/|min:6',
         'avatar' => 'required',
 
@@ -40,6 +40,7 @@ class Form extends Component
     {
         return [
             'avatar.required' => 'Gender is required',
+            'username.max' => '10 characters max'
         ];
     }
 
