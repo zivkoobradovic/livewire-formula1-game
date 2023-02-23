@@ -254,7 +254,7 @@ function nextGame() {
 
 
   } else {
-    $('.loader').slideDown(function() {
+    $('.loader').fadeIn(function() {
       $('.game-time span').stopwatch().stopwatch('stop');
       $('.result').val($('.game-time span').text());
       $('#formEnd').submit();
