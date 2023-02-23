@@ -86,7 +86,7 @@ class Form extends Component
 
     public function updatedEmail($email)
     {
-        $this->validateOnly('email', ['email' => 'required|email:rfc,dns|lowercase']);
+        $this->validateOnly('email', ['email' => 'required|email:rfc,dns']);
         $this->player = GamePlayer::where('email', $this->email)->get()->first();
         if ($this->player && !$this->player->status) {
             // player exists without code
