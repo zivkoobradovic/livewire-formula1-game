@@ -922,7 +922,7 @@ flex-direction: column-reverse;
     max-width: 130px;
   }
   .game-bar h5 {
-    font-size: 12px;
+    font-size: 18px;
   }
   .game-footer-logo img {
     max-width: 300px;
@@ -1080,14 +1080,12 @@ flex-direction: column-reverse;
 }
 
 }
-@media (max-height: 700px) {
+@media (max-height: 650px) {
 
   .game-bar {
     padding-top: 0px;
 }
-.game-bar h5 {
-    font-size: 22px;
-  }
+
   .game-footer-logo img {
     max-width: 290px;
 }
@@ -1132,11 +1130,7 @@ h1 {
     width: 40px;
     height: 40px;
   }
-  .part-list li {
-    list-style: none;
-    width: 40px;
-    margin-top: 10px;
-}
+
 }
 @media (max-height: 450px) {
   .landscape-alert {
