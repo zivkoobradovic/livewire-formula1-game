@@ -24,17 +24,17 @@ class Translate
                 'title_2' => 'Find Jeddah Cornish Circuit',
                 'drag_2' => 'drag here',
 
-                'title_3' => 'get the car ready for the race',
+                'title_3' => 'Get the car ready for the race',
 
-                'title_4' => 'select the finish flag',
+                'title_4' => 'Select the finish flag',
                 'drag_4' => 'drag here',
 
-                'title_5' => 'jeddah cornish circuit has the most',
+                'title_5' => 'Jeddah Cornish Circuit has the most',
                 'traffic_5' => 'traffic',
                 'corners_5' => 'corners',
                 'stops_5' => 'stops',
 
-                'title_6' => 'who won the race in Azooz\'s dream?',
+                'title_6' => 'Who won the race in Azooz\'s dream?',
 
                 'score' => 'your score',
                 'share' => 'share',
