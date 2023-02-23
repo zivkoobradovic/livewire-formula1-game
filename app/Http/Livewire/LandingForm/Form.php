@@ -29,7 +29,7 @@ class Form extends Component
     public $language;
 
     protected $rules = [
-        'email' => 'required|email:rfc,dns|lowercase',
+        'email' => 'required|email:rfc,dns',
         'username' => 'required|unique:game_players|max:10',
         'phone' => 'regex:/^([0-9\s\-\+\(\)]*)$/|min:6|nullable',
         'avatar' => 'required',
@@ -78,15 +78,15 @@ class Form extends Component
 
 
 
-    public function updated($propertyName)
-    {
-        $this->validateOnly($propertyName);
-    }
+    // public function updated($propertyName)
+    // {
+    //     $this->validateOnly($propertyName);
+    // }
 
 
     public function updatedEmail($email)
     {
-        $this->validateOnly('email', ['email' => 'required|email:rfc,dns']);
+        $this->validateOnly('email', ['email' => 'required']);
         $this->player = GamePlayer::where('email', $this->email)->get()->first();
         if ($this->player && !$this->player->status) {
             // player exists without code
