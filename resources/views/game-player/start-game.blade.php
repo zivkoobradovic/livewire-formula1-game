@@ -26,6 +26,9 @@
 
     <div id="soundFix"></div>
     <div class="loader"></div>
+    <div class="landscape-alert">
+      <div class="landscape-alert-content">please use portrait mode</div>
+    </div>
     <div class="correct-pop">
       <div class="correct-pop-content"></div>
     </div>
@@ -116,7 +119,7 @@
                         <div class="col-md-12">
                             <h1>{{ App\Services\Translate::getTranslation()[session('lang')]['title_3'] }}</h1>
                         </div>
-                        <div class="col-lg-8 col-lg-push-2 col-md-8 col-md-push-2 col-sm-8 col-xs-12">
+                        <div class="col-lg-8 col-lg-push-2 col-md-8 col-md-push-2 col-sm-8 col-xs-12 text-center">
                             <div class="car-holder">
                                 <div class="part-slot part-slot-1" data-part="1"></div>
                                 <div class="part-slot part-slot-2" data-part="2"></div>

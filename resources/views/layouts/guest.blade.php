@@ -24,7 +24,9 @@
 </head>
 
 <body>
-
+  <div class="landscape-alert">
+    <div class="landscape-alert-content">please use portrait mode</div>
+  </div>
   <div class="loader">
 
   </div>

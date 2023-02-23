@@ -16,9 +16,14 @@
         <!-- Styles -->
         @livewireStyles
     </head>
+    <div class="landscape-alert">
+      <div class="landscape-alert-content">please use portrait mode</div>
+    </div>
+
     <div class="loader">
 
     </div>
+
     <body class="font-sans antialiased">
         <x-jet-banner />
 

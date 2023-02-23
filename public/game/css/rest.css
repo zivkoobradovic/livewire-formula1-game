@@ -78,6 +78,35 @@ body {
     background-repeat: no-repeat;
 
 }
+.landscape-alert {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background-color: #000;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    display: none;
+  }
+  .landscape-alert-content {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border-radius: 10px;
+      /* background-color: #fff; */
+      top: 50%;
+      left: 50%;
+      margin-top: -50px;
+      margin-left: -50px;
+      /* background-image: url(../img/correct.gif); */
+      background-size: 300px;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #fff;
+      text-align: center;
+  }
 .lang-select {
     width: 50%;
     float: left;
@@ -1042,15 +1071,16 @@ flex-direction: column-reverse;
     height: auto;
     display: block;
   }
+  .game-content {
+    display: block;
+}
   body, html {
     overflow: scroll;
     padding-bottom: 150px;
 }
 }
-@media (max-height: 680px) {
-  .game-content {
-    display: block;
-}
+@media (max-height: 700px) {
+
   .game-bar {
     padding-top: 0px;
 }
@@ -1090,7 +1120,8 @@ h1 {
 }
 .car-holder {
     width: 50%;
-        float: right;
+    float: none;
+    display: inline-block;
 }
 
 
@@ -1103,4 +1134,9 @@ h1 {
     width: 40px;
     margin-top: 10px;
 }
+}
+@media (max-height: 600px) and (max-width: 768px) {
+  .landscape-alert {
+    display: block;
+  }
 }
