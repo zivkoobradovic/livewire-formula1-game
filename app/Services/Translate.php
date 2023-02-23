@@ -21,7 +21,7 @@ class Translate
                 'race' => 'Race',
                 'race_again' => 'Race Again',
 
-                'title_2' => 'Find Jeddah Cornish Circuit',
+                'title_2' => 'Find Jeddah Corniche Circuit',
                 'drag_2' => 'drag here',
 
                 'title_3' => 'Get the car ready for the race',
@@ -29,7 +29,7 @@ class Translate
                 'title_4' => 'Select the finish flag',
                 'drag_4' => 'drag here',
 
-                'title_5' => 'Jeddah Cornish Circuit has the most',
+                'title_5' => 'Jeddah Corniche Circuit has the most',
                 'traffic_5' => 'traffic',
                 'corners_5' => 'corners',
                 'stops_5' => 'stops',
