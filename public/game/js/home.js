@@ -3,11 +3,9 @@ $(document).ready(function() {
     $('.loader').delay(1000).fadeOut(function() {
 
     });
-    $('.email-input').on('keyup touchend input change', function(){
-      $(this).val($(this).val().toLowerCase());
-    });
-    setTimeout(function() {
-    $('.email-input').val($('.email-input').val().toLowerCase());
-  }, 500);
-
+    setTimeout(function downCase() {
+        $('.email-input').val($('.email-input').val().toLowerCase());
+        console.log('down');
+        setTimeout(downCase, 500);
+    }, 500);
 });
