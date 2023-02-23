@@ -840,8 +840,8 @@ margin-top: 20px;
       height: 60px;
     }
   .part-box {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     display: inline-block;
   }
   .mob-winner {
@@ -1045,5 +1045,62 @@ flex-direction: column-reverse;
   body, html {
     overflow: scroll;
     padding-bottom: 150px;
+}
+}
+@media (max-height: 680px) {
+  .game-content {
+    display: block;
+}
+  .game-bar {
+    padding-top: 0px;
+}
+.game-bar h5 {
+    font-size: 22px;
+  }
+  .game-footer-logo img {
+    max-width: 290px;
+}
+.game-logo img {
+    max-width: 110px;
+}
+h1 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    padding: 0px;
+}
+  .track-slot, .flag-slot {
+
+    padding: 0px;
+    height: 200px;
+  }
+  .track-slot small, .flag-slot small {
+    font-size: 50px;
+    line-height: 200px;
+}
+
+  .track-list li, .flag-list li {
+    width: 33.333%;
+}
+  .track-box, .flag-box {
+      height: 90px;
+      }
+      .answer-list li {
+    font-size: 18px;
+    line-height: 50px;
+}
+.car-holder {
+    width: 50%;
+        float: right;
+}
+
+
+.part-slot {
+    width: 40px;
+    height: 40px;
+  }
+  .part-list li {
+    list-style: none;
+    width: 40px;
+    margin-top: 10px;
 }
 }

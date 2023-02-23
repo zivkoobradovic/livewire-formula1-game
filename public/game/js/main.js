@@ -276,5 +276,7 @@ $(document).ready(function() {
         audioInit = 1;
       }
     })
-
+    if (window.matchMedia("(orientation: landscape)").matches) {
+       // alert('landscape');
+    }
 });
