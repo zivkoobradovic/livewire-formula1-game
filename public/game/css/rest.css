@@ -430,8 +430,9 @@ h1 {
 }
 .track-list li, .flag-list li {
   list-style: none;
-  float: left;
+  /* float: left; */
   width: 50%;
+  display: inline-block;
 }
 .track-box, .flag-box {
   margin: 5px;
@@ -800,7 +801,12 @@ margin-top: 20px;
     display: block;
   }
 } */
-
+@media (max-width: 770px) {
+.track-box:hover, .flag-box:hover, .part-box:hover, .winner-box:hover {
+    transition: none !important;
+    box-shadow: none !important;
+}
+}
 @media (max-width: 768px) {
   .loader {
     background-image: url(../img/loader-f1.jpg);
@@ -812,9 +818,11 @@ margin-top: 20px;
   .track-box, .flag-box, .part-box, .winner-box {
       transition: none !important;
   }
-  .track-box:hover, .flag-box:hover, .part-box:hover, .winner-box:hover {
-      transition: none !important;
-      box-shadow: none !important;
+
+  .game-bar {
+      padding-top: 0px;
+      float: left;
+      position: relative;
   }
   .game-content {
       display: block;
@@ -822,17 +830,14 @@ margin-top: 20px;
       position: fixed;
       width: 100%;
   }
-  .track-list li, .flag-list li {
-    width: 33.33333%;
-    text-align: center;
-  }
+
   .part-list {
     padding-top: 20px;
   }
-  .part-list li {
-      display: inline-block;
-      margin-top: 0px;
-  }
+  .part-slot {
+      width: 60px;
+      height: 60px;
+    }
   .part-box {
     width: 50px;
     height: 50px;
@@ -866,16 +871,23 @@ flex-direction: column-reverse;
     text-align: center;
 }
 }
+@media (max-width: 760px) {
+.track-list li, .flag-list li {
+  width: 33.33333%;
+  text-align: center;
+}
+.part-list li {
+    display: inline-block;
+    margin-top: 0px;
+}
+
+}
 @media (max-width: 600px) {
   h1 {
     font-size: 22px;
     margin-bottom: 10px;
   }
-  .game-bar {
-      padding-top: 0px;
-      float: left;
-      position: relative;
-  }
+
   .game-logo img {
     max-width: 130px;
   }

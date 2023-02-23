@@ -127,7 +127,7 @@
                         <div class="col-md-12">
                             <h1>{{ App\Services\Translate::getTranslation()[session('lang')]['title_3'] }}</h1>
                         </div>
-                        <div class="col-lg-8 col-lg-push-2 col-md-8 col-md-push-2 col-sm-10 col-xs-12">
+                        <div class="col-lg-8 col-lg-push-2 col-md-8 col-md-push-2 col-sm-8 col-xs-12">
                             <div class="car-holder">
                                 <div class="part-slot part-slot-1" data-part="1"></div>
                                 <div class="part-slot part-slot-2" data-part="2"></div>
@@ -164,12 +164,12 @@
                         <div class="col-md-12">
                             <h1>{{ App\Services\Translate::getTranslation()[session('lang')]['title_4'] }}</h1>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6">
                             <div class="flag-slot" data-id="2">
                                 <small>{{ App\Services\Translate::getTranslation()[session('lang')]['drag_4'] }}</small>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-sm-6">
                             <ul class="flag-list">
                                 <li>
                                     <div class="flag-box">
