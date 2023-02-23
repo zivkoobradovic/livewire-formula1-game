@@ -29,10 +29,19 @@ class Form extends Component
     public $language;
 
     protected $rules = [
+        'email' => 'required|email:rfc,dns|lowercase',
         'username' => 'required|unique:game_players',
         'phone' => 'regex:/^([0-9\s\-\+\(\)]*)$/|min:6',
+        'avatar' => 'required',
 
     ];
+
+    public function messages(): array
+    {
+        return [
+            'avatar.required' => 'Gender is required',
+        ];
+    }
 
     public function mount()
     {
@@ -76,7 +85,7 @@ class Form extends Component
 
     public function updatedEmail($email)
     {
-        $this->validateOnly('email', ['email' => 'required|email:rfc,dns']);
+        $this->validateOnly('email', ['email' => 'required|email:rfc,dns|lowercase']);
         $this->player = GamePlayer::where('email', $this->email)->get()->first();
         if ($this->player && !$this->player->status) {
             // player exists without code
