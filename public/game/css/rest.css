@@ -1132,7 +1132,7 @@ h1 {
   }
 
 }
-@media (max-height: 450px) {
+@media only screen and (max-height: 350px) {
   .landscape-alert {
     display: block;
   }
