@@ -738,7 +738,13 @@ margin-top: 20px;
   box-shadow: 0px 0px 40px 0px hsl(7deg 100% 50% / 34%);
   display: inline-block;
 }
-
+.results-content {
+    background-size: 150%;
+    background-repeat: no-repeat;
+    background-color: #000507;
+    background-position: bottom right;
+    background-image: url(../img/bg_f1.jpg);
+}
 #html-content-holder {
     background-color: #000;
     padding: 30px;
@@ -747,7 +753,7 @@ margin-top: 20px;
     background-size: cover;
     display: inline-block;
     background-position: bottom right;
-    background-image: url(../img/bg_f1.jpg);
+    /* background-image: url(../img/bg_f1.jpg); */
     text-shadow: 2px 2px #000000e6;
 }
 #html-content-holder img {

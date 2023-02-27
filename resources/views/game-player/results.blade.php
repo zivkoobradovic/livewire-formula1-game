@@ -22,7 +22,7 @@
     <![endif]-->
 </head>
 
-<body style="overflow: scroll;">
+<body style="overflow: scroll;" class=" results-content">
 
   <div class="game-holder">
     <div class="game-content">
@@ -47,10 +47,10 @@
           <div>
             {!! $shareComponent !!}
           </div>
-          <small>...or take a screenshot and share it on<br>Instagram / TikTok / Snapchat</small>
+          <small>or take a screenshot and share it on<br>Instagram / TikTok / Snapchat</small>
           <div class="clearfix">
           </div>
-          <button class="btn btn-sm btn-primary take-screenshot">take a screenshot</button>
+          <button class="btn btn-sm btn-primary take-screenshot">Download the score</button>
           <div class="clearfix">
           </div>
           <hr>
