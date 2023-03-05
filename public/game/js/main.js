@@ -263,8 +263,27 @@ function nextGame() {
 }
 $(document).ready(function() {
     $('.loader').delay(1000).fadeOut(function() {
-      $('.game-time span').stopwatch().stopwatch('start');
+      function handleTimer() {
+        if(count === 0) {
+          $('.loader-start').fadeOut();
+          clearInterval(timer);
+          endCountdown();
+        } else {
+          $('.loader-start-num').html(count);
+          count--;
+        }
+      }
+
+      var count = 2;
+      var timer = setInterval(function() { handleTimer(count); }, 1000);
     });
+
+    function endCountdown() {
+      $('.game-time span').stopwatch().stopwatch('start');
+    }
+
+
+
     var audioInit = 0;
     document.body.addEventListener("mousemove", function () {
       if(audioInit == 0) {

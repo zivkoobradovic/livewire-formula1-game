@@ -63,7 +63,32 @@ body {
   background-color: rgb(38 38 38 / 47%);
   animation: opulseBg 0.6s infinite ease-in-out alternate;
 }
+.loader-start {
+    display: block;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: #bfbfbff0;
+    z-index: 999;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 400px;
+    -webkit-backdrop-filter: saturate(180%) blur(26px);
+    backdrop-filter: saturate(180%) blur(26px);
+    background-color: hsl(0deg 0% 0% / 74%);
+    background-color: rgb(0 0 0 / 74%);
+}
+.loader-start-num {
+      font-size: 110px;
+      text-align: center;
+      line-height: 100vh;
+      color: #fe1e01;
+      animation: bounce2 1s ease infinite;
 
+  }
 .loader-f1 {
     position: fixed;
     width: 100%;
@@ -403,6 +428,19 @@ label {
   border-bottom-color: #312e5a6e;
   width: 100%;
   float: left;
+}
+.close-link {
+  width: 50px;
+  height: 50px;
+  background-color: #fe1e01;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+  position: relative;
+  display: block;
+  border-radius: 40px;
+  margin-left: auto;
+  margin-right: auto;
 }
 h1 {
     color: #fff;

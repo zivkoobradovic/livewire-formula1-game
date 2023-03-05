@@ -25,6 +25,12 @@
     <audio id="wrong-audio" src="{{asset('game/sounds/wrong-47984.mp3')}}"></audio>
 
     <div id="soundFix"></div>
+    <div class="loader-start">
+      <div class="loader-start-num">
+        3
+      </div>
+    </div>
+
     <div class="loader"></div>
     <div class="landscape-alert">
       <div class="landscape-alert-content">please use portrait mode</div>
@@ -49,7 +55,6 @@
                     <div class="game-time">
                         <h5><span class="pulse">00:00:00</span></h5>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -62,6 +67,7 @@
                 <div class="container">
                     <div>
                         <div class="col-md-12">
+
                             <h1>{{ App\Services\Translate::getTranslation()[session('lang')]['title_2'] }}</h1>
                         </div>
                         <div class="col-md-6 col-sm-6">
@@ -106,6 +112,7 @@
                     </div>
 
                 </div>
+                <a href="/" class="close-link">X</a>
 
             </div>
         </div>
@@ -143,6 +150,7 @@
                     </div>
 
                 </div>
+                <a href="/" class="close-link">X</a>
 
             </div>
         </div>
@@ -198,6 +206,7 @@
                     </div>
 
                 </div>
+                <a href="/" class="close-link">X</a>
 
             </div>
         </div>
@@ -221,6 +230,7 @@
                     </div>
 
                 </div>
+                <a href="/" class="close-link">X</a>
 
             </div>
         </div>
@@ -259,6 +269,7 @@
                     </div>
 
                 </div>
+                <a href="/" class="close-link">X</a>
 
             </div>
         </div>
@@ -268,6 +279,7 @@
       <div class="container">
           <div class="row">
               <div class="col-md-12">
+
                   <div class="game-footer-logo">
                       <img src="{{asset('game/img/bg_f1.png')}}">
                   </div>
