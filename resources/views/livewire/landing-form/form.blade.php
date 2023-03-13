@@ -171,17 +171,20 @@
 
                     <section class="col-md-12">
                         @foreach ($topTenPlayers as $player)
-                        <div class="result-box">
-                            <div class="col-md-2 col-xs-2">
-                                {{$loop->iteration}}
+                        @if ($player->result !== '')
+                            <div class="result-box">
+                                <div class="col-md-2 col-xs-2">
+                                    {{$loop->iteration}}
+                                </div>
+                                <div class="col-md-5 col-xs-5">
+                                    {{$player->username}}
+                                </div>
+                                <div class="col-md-5 col-xs-5">
+                                    {{$player->result}}
+                                </div>
                             </div>
-                            <div class="col-md-5 col-xs-5">
-                                {{$player->username}}
-                            </div>
-                            <div class="col-md-5 col-xs-5">
-                                {{$player->result}}
-                            </div>
-                        </div>
+                        @endif
+
                         @endforeach
                     </section>
                     <div class="clearfix"></div>

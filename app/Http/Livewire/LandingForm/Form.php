@@ -46,7 +46,7 @@ class Form extends Component
 
     public function mount()
     {
-        $this->topTenPlayers =  GamePlayer::orderBy('result', 'asc')->where('status', '=', true)->take(10)->get();
+        $this->topTenPlayers =  GamePlayer::orderBy('result', 'asc')->where('status', '=', true)->where('result', '!=', '')->take(10)->get();
         $this->translate = Translate::getTranslation();
         $this->language = session('lang');
     }
