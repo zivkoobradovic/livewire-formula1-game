@@ -300,7 +300,7 @@
     </script>
     <script src="{{asset('game/js/jquery.stopwatch.js')}}"></script>
     <script src="{{asset('game/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('game/js/main.js')}}"></script>
+    <script src="{{asset('game/js/main.min.js')}}"></script>
 
 </body>
 
